@@ -1,0 +1,198 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,body{
+  display: grid;
+  height:50%;
+  text-align: center;
+  place-items: center;
+  background: #664AFF;
+}
+
+.navbar{
+  overflow: hidden;
+  background-color: #fff;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+}
+
+.navbar a{
+  float: center;
+  display: block;
+  color: #664AFF;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.range1{
+  position: relative;
+  right: center;
+  top: 400px;
+  right: 80px;
+  height: 80px;
+  width: 380px;
+  background: #fff;
+  
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  padding: 0 65px 0 45px;
+}
+
+.btn-1{
+  position: relative;
+  outline: none;
+  top: -40px;
+  right: -30px;
+  height: 60px;
+  width: 380px;
+  border: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 16px 30px;
+  border-radius: 40px;
+  background: #fff;
+  color: #664AFF;
+}
+
+.range1 .btn_plus{
+  position: relative;
+  outline: none;
+  top: -75px;
+  right: -190px;
+  height: 60px;
+  width: 60px;
+  border: 0;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 0;
+  padding: 0px 0px;
+  border-radius: 40px;
+  background: #fff;
+  color: #664AFF;
+}
+
+.range1 .btn_minus{
+  position: relative;
+  outline: none;
+  top: -75px;
+  right: 170px;
+  height: 60px;
+  width: 60px;
+  border: 0;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 0;
+  padding: 0px 0px;
+  border-radius: 40px;
+  background: #fff;
+  color: #664AFF;
+}
+
+.range1 .slidervalue1{
+  position: relative;
+  width: 100%;
+  height: 0%;
+}
+
+.range1 .slidervalue1 span{
+  font-size: 35px;
+  position: absolute;
+  height: 80px;
+  width: 90px;
+
+  background-color: #fff;
+  color: #664AFF;
+  font-weight: 500;
+  top: 0px;
+  right: -160px;
+  line-height: 75px;
+  z-index: 3;
+}
+
+.range1 .slidervalue1 label{
+  font-size: 25px;
+  position: absolute;
+  height: 80px;
+  width: 100px;
+
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  background-color: #fff;
+  color: #664AFF;
+  font-weight: 500;
+  top: 0px;
+  right: -230px;
+  line-height: 80px;
+  z-index: 2;
+}
+
+.range1 .field1{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.range1 .field1 .value{
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  color: #664AFF;
+}
+
+.range1 .field1 .value.left{
+  left: 55px;
+}
+
+.range1 .field1 .value.right{
+  right: 38px;
+}
+
+.range1 .field1 .btn{
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  color: #664AFF;
+}
+
+.range1 .field1 input{
+  -webkit-appearance: none;
+  height: 3px;
+  width: 100px;
+  background: #ddd;
+  outline: none;
+  border: none
+}
+
+.range1 .field1 label{
+  font-size: 25px;
+  position: absolute;
+  height: 80px;
+  width: 80px;
+
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+
+  background-color: #fff;
+  color: #664AFF;
+  font-weight: 500;
+  top: 0px;
+  right: 330px;
+  line-height: 80px;
+  z-index: 2;
+}
