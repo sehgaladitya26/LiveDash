@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard | Focal Length </title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setInterval(myTimer, 500);
+            function myTimer() {
+                //document.querySelector('form').onsubmit = function () {
+                fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0')
+                    .then(response => response.json())
+                    .then(data => {
+                        const myJSON = JSON.stringify(data)
+                        if(myJSON == "0"){
+                            document.getElementById("bt1").innerHTML = "Recalibrate";
+                        }
+                    });
+                // .catch(error => {
+                //     console.log('Error:', error);
+                // })
+                return false;
+            }
+            // document.querySelector('form').onsubmit = function () {
+            //     const target = document.querySelector('#get_bool').value;
+            //     document.querySelector('#result2').innerHTML = target;
+            //     //console.log(target);
+            //     fetch("https://blynk.cloud/external/api/update?token=PIhHUS2rhKB6AlJQeN7TGcMh326zGV4-&v1=" + target)
+            //     // document.querySelector('#result').innerHTML = target;
+            //     return false;
+            // }
+
+            const inputslider_u = document.querySelector("#u");
+            inputslider_u.oninput = () => {
+                let value1 = inputslider_u.value;
+                document.querySelector("#us").innerHTML = value1;
+                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
+
+                return false;
+            }
+
+            const inputslider_v = document.querySelector("#v");
+            inputslider_v.oninput = () => {
+                let value2 = inputslider_v.value;
+                document.querySelector("#vs").innerHTML = value2;
+                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + value2)
+
+                return false;
+            }
+
+        });
+
+        function increment(ID){
+            console.log("Haan main pagal hai for " + ID);
+            const cur = document.getElementById(ID);
+            var v1 = cur.value;
+            v1 = (Number(v1) + Number(cur.step)).toFixed(1);
+            if(Number(v1) > 10){
+                v1 = 10.0;
+            }
+            cur.value = v1;
+            document.getElementById(ID + "s").innerHTML = v1;
+        }
+
+        function decrement(ID){
+            console.log("Haan main pagal hai for " + ID);
+            const cur = document.getElementById(ID);
+            var v1 = cur.value;
+            v1 = (Number(v1) - Number(cur.step)).toFixed(1);
+            if(Number(v1) < 0.0){
+                v1 = 0.0;
+            }
+            cur.value = v1;
+            document.getElementById(ID + "s").innerHTML = v1;
+        }
+    </script>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="range1">
+
+        <div class="slidervalue1">
+            <span id="us">0</span>
+            <label>.cm</label>
+        </div>
+
+        <div class="field1">
+            <label id="u_label">u</label>
+            <div class="value left">0</div>
+            <input type="range" min="0.0" max="10.0" value="0.0" step="0.1" id="u">
+            <div class="value right">10</div>
+        </div>
+        <button type="button" onclick = 'increment("u")' class = "btn_plus" id="btn_plus1">+</button>
+        <button type="button" onclick = 'decrement("u")' class = "btn_minus" id="btn_minus1">-</button>
+    </div>
+
+    <div class="range1">
+        <div class = "navbar">
+            <a href="#focal">focal length</a>
+        </div>
+        <div class="slidervalue1">
+            <span id="vs">0</span>
+            <label>.cm</label>
+        </div>
+
+        <div class="field1">
+            <label id="v_label">v</label>
+            <div class="value left">0</div>
+            <input type="range" min="0.0" max="10.0" value="0.0" step="0.1" id="v">
+            <div class="value right">10</div>
+        </div>
+        <button type="button" onclick = 'increment("v")' class = "btn_plus" id="btn_plus2">+</button>
+        <button type="button" onclick = 'decrement("v")' class = "btn_minus" id="btn_minus2">-</button>
+        <button type="button" class="btn-1" onclick='myfunction()' id = "bt1">Recalibrate</button>
+        <script>
+            function myfunction() {
+                console.log("tu pagal hai kya??")
+                document.getElementById("bt1").innerHTML = "Recalibrating";
+                document.querySelector("#us").innerHTML = "0";
+                document.querySelector("#vs").innerHTML = "0";
+                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+            }
+        </script>
+    </div>
+</body>
+
+</html>
