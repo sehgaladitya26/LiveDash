@@ -10,33 +10,39 @@ html,body{
   height:50%;
   text-align: center;
   place-items: center;
-  background: #664AFF;
+  background: linear-gradient(90deg, #fff 0%, #e5e6f5 74%);
 }
 
 .navbar{
   overflow: hidden;
-  background-color: #fff;
+  background-color: #664AFF;
   position: fixed;
+  display: block;
   top: 0px;
   right: 0px;
   width: 100%;
+  height: 8%;
+  z-index: 3;
 }
 
 .navbar a{
-  float: center;
   display: block;
-  color: #664AFF;
-  text-align: center;
+  color: #fff;
   font-weight: bold;
   font-size: 40px;
-  padding: 14px 16px;
+  padding: 5px 16px;
   text-decoration: none;
+}
+#focal_head{
+  float: left;
+}
+#countdown{
+  float: right;
 }
 .range1{
   position: relative;
-  right: center;
-  top: 400px;
   right: 80px;
+  top: 400px;
   height: 80px;
   width: 380px;
   background: #fff;
@@ -44,6 +50,7 @@ html,body{
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   padding: 0 65px 0 45px;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
 }
 
 .btn-1{
@@ -61,6 +68,7 @@ html,body{
   border-radius: 40px;
   background: #fff;
   color: #664AFF;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
 }
 
 .range1 .btn_plus{
@@ -77,6 +85,12 @@ html,body{
   padding: 0px 0px;
   border-radius: 40px;
   background: #fff;
+  cursor: pointer;
+  color: rgb(189, 189, 189);
+  transition: all 0.2s ease-out;
+}
+
+.range1 .btn_plus:hover{
   color: #664AFF;
 }
 
@@ -94,6 +108,11 @@ html,body{
   padding: 0px 0px;
   border-radius: 40px;
   background: #fff;
+  color: rgb(189, 189, 189);
+  transition: all 0.2s ease-out;
+}
+
+.range1 .btn_minus:hover{
   color: #664AFF;
 }
 
@@ -115,14 +134,15 @@ html,body{
   top: 0px;
   right: -160px;
   line-height: 75px;
-  z-index: 3;
+  z-index: 2;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
 }
 
 .range1 .slidervalue1 label{
   font-size: 25px;
   position: absolute;
   height: 80px;
-  width: 100px;
+  width: 80px;
 
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -136,6 +156,7 @@ html,body{
   right: -230px;
   line-height: 80px;
   z-index: 2;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
 }
 
 .range1 .field1{
@@ -177,11 +198,11 @@ html,body{
   border: none
 }
 
-.range1 .field1 label{
+#v_label, #u_label{
   font-size: 25px;
   position: absolute;
   height: 80px;
-  width: 80px;
+  width: 150px;
 
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -194,5 +215,44 @@ html,body{
   top: 0px;
   right: 330px;
   line-height: 80px;
+  z-index: 2;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+#v_label::after{
+  content: "v";
+}
+
+#u_label::after{
+  content: "u";
+}
+
+#v_label:hover::after{
+  content: "Image:";
+}
+
+#u_label:hover::after{
+  content: "Object:";
+}
+
+
+.range1 .stream{
+  position: relative;
+  outline: none;
+  top: -720px;
+  right: 20px;
+  height: 360px;
+  width: 480px;
+  border: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 10;
+  padding: 16px 30px;
+  border-radius: 40px;
+  background: #fff;
+  color: #664AFF;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
   z-index: 2;
 }
