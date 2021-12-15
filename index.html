@@ -5,7 +5,7 @@
     <title>Dashboard | Focal Length </title>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            setInterval(myTimer, 500);
+            //setInterval(myTimer, 500);
             function myTimer() {
                 //document.querySelector('form').onsubmit = function () {
                 fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0')
@@ -14,6 +14,7 @@
                         const myJSON = JSON.stringify(data)
                         if (myJSON == "0") {
                             document.getElementById("bt1").innerHTML = "Recalibrate";
+                            clearInterval(myInterval);
                         }
                     });
                 // .catch(error => {
@@ -128,6 +129,7 @@
                 document.querySelector("#u").value = 0;
                 document.querySelector("#v").value = 0;
                 fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+                const myInterval = setInterval(myTimer, 500);
             }
         </script>
     </div>
