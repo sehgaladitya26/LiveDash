@@ -60,7 +60,7 @@
             }
             cur.value = v1;
             document.getElementById(ID + "s").innerHTML = v1;
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + v1)
+            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + int(ID-44) + "=" + v1)
         }
 
         function decrement(ID) {
@@ -73,7 +73,7 @@
             }
             cur.value = v1;
             document.getElementById(ID + "s").innerHTML = v1;
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + v1)
+            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + int(ID-44) + "=" + v1)
         }
     </script>
     <link rel="stylesheet" href="style2.css">
@@ -97,7 +97,7 @@
             <div class="value right">47</div>
             <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
         </div>
-        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1">+</button>
+        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1" >+</button>
         <button type="button" onclick='decrement("u")' class="btn_minus" id="btn_minus1">-</button>
     </div>
     
