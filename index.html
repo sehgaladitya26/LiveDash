@@ -31,7 +31,7 @@
             // }
 
             const inputslider_u = document.querySelector("#u");
-            inputslider_u.oninput = () => {
+            inputslider_u.onchange = () => {
                 let value1 = inputslider_u.value;
                 document.querySelector("#us").innerHTML = value1;
                 fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
@@ -40,7 +40,7 @@
             }
 
             const inputslider_v = document.querySelector("#v");
-            inputslider_v.oninput = () => {
+            inputslider_v.onchange = () => {
                 let value2 = inputslider_v.value;
                 document.querySelector("#vs").innerHTML = value2;
                 fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + value2)
