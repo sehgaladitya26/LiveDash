@@ -4,36 +4,39 @@
 <head>
     <title>Dashboard | Focal Length </title>
     <script>
+        var myInterval;
+        function myfunction() {
+            console.log("tu pagal hai kya??")
+            document.getElementById("bt1").innerHTML = "Recalibrating";
+            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+            myInterval = setInterval(myTimer, 500);
+        }
+
+        function myTimer() {
+            //document.querySelector('form').onsubmit = function () {
+            fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0')
+                .then(response => response.json())
+                .then(data => {
+                    const myJSON = JSON.stringify(data)
+                    if (myJSON == "0") {
+                        document.getElementById("bt1").innerHTML = "Recalibrate";
+                        clearInterval(myInterval);
+                        document.querySelector("#u").value = 0;
+                        document.querySelector("#v").value = 0;
+                        document.querySelector("#us").innerHTML = "0";
+                        document.querySelector("#vs").innerHTML = "0";
+                    }
+                });
+            // .catch(error => {
+            //     console.log('Error:', error);
+            // })
+            return false;
+        }
+        
         document.addEventListener('DOMContentLoaded', () => {
 
-            function myfunction() {
-                console.log("tu pagal hai kya??")
-                document.getElementById("bt1").innerHTML = "Recalibrating";
-                document.querySelector("#us").innerHTML = "0";
-                document.querySelector("#vs").innerHTML = "0";
-                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-                const myInterval = setInterval(myTimer, 500);
-            }
-            
             //setInterval(myTimer, 500);
-            function myTimer() {
-                //document.querySelector('form').onsubmit = function () {
-                fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0')
-                    .then(response => response.json())
-                    .then(data => {
-                        const myJSON = JSON.stringify(data)
-                        if (myJSON == "0") {
-                            document.getElementById("bt1").innerHTML = "Recalibrate";
-                            clearInterval(myInterval);
-                            document.querySelector("#u").value = 0;
-                            document.querySelector("#v").value = 0;
-                        }
-                    });
-                // .catch(error => {
-                //     console.log('Error:', error);
-                // })
-                return false;
-            }
+            
             // document.querySelector('form').onsubmit = function () {
             //     const target = document.querySelector('#get_bool').value;
             //     document.querySelector('#result2').innerHTML = target;
