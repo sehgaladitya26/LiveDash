@@ -60,7 +60,7 @@
             }
             cur.value = v1;
             document.getElementById(ID + "s").innerHTML = v1;
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" +  String(parseInt(ID)-44) + "=" + v1)
+            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" +  String(parseInt(ID)-Number(44)) + "=" + v1)
         }
 
         function decrement(ID) {
@@ -73,7 +73,7 @@
             }
             cur.value = v1;
             document.getElementById(ID + "s").innerHTML = v1;
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String(parseInt(ID)-44) + "=" + v1)
+            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String(parseInt(ID)-Number(44)) + "=" + v1)
         }
     </script>
     <link rel="stylesheet" href="style2.css">
