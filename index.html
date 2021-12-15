@@ -55,8 +55,8 @@
             const cur = document.getElementById(ID);
             var v1 = cur.value;
             v1 = (Number(v1) + Number(cur.step)).toFixed(1);
-            if (Number(v1) > 10) {
-                v1 = 10.0;
+            if (Number(v1) > 47) {
+                v1 = 47.0;
             }
             cur.value = v1;
             document.getElementById(ID + "s").innerHTML = v1;
