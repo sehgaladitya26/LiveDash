@@ -14,8 +14,6 @@
                         const myJSON = JSON.stringify(data)
                         if (myJSON == "0") {
                             document.getElementById("bt1").innerHTML = "Recalibrate";
-                            document.querySelector("#u").value = 0;
-                            document.querySelector("#v").value = 0;
                         }
                     });
                 // .catch(error => {
@@ -127,6 +125,8 @@
                 document.getElementById("bt1").innerHTML = "Recalibrating";
                 document.querySelector("#us").innerHTML = "0";
                 document.querySelector("#vs").innerHTML = "0";
+                document.querySelector("#u").value = 0;
+                document.querySelector("#v").value = 0;
                 fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
             }
         </script>
