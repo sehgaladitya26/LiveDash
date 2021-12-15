@@ -14,6 +14,8 @@
                         const myJSON = JSON.stringify(data)
                         if (myJSON == "0") {
                             document.getElementById("bt1").innerHTML = "Recalibrate";
+                            document.querySelector("#u").value = 0;
+                            document.querySelector("#v").value = 0;
                         }
                     });
                 // .catch(error => {
