@@ -5,6 +5,16 @@
     <title>Dashboard | Focal Length </title>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            function myfunction() {
+                console.log("tu pagal hai kya??")
+                document.getElementById("bt1").innerHTML = "Recalibrating";
+                document.querySelector("#us").innerHTML = "0";
+                document.querySelector("#vs").innerHTML = "0";
+                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+                const myInterval = setInterval(myTimer, 500);
+            }
+            
             //setInterval(myTimer, 500);
             function myTimer() {
                 //document.querySelector('form').onsubmit = function () {
@@ -123,14 +133,7 @@
         <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
         <div class="stream">Stream</div>
         <script>
-            function myfunction() {
-                console.log("tu pagal hai kya??")
-                document.getElementById("bt1").innerHTML = "Recalibrating";
-                document.querySelector("#us").innerHTML = "0";
-                document.querySelector("#vs").innerHTML = "0";
-                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-                const myInterval = setInterval(myTimer, 500);
-            }
+            
         </script>
     </div>
 </body>
