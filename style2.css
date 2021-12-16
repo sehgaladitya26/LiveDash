@@ -6,11 +6,11 @@
 }
 
 html,body{
-  display: grid;
-  height:50%;
+  display: contents;
+  height:100%;
   text-align: center;
   place-items: center;
-  background: linear-gradient(90deg, #fff 0%, #e5e6f5 74%);
+  background: linear-gradient(127deg, #fff 0%, #e5e6f5 74%);
 }
 
 .navbar{
@@ -27,22 +27,26 @@ html,body{
 
 .navbar a{
   display: block;
+  position: relative;
   color: #fff;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 220%;
   padding: 5px 16px;
   text-decoration: none;
 }
 #focal_head{
   float: left;
 }
-#countdown{
+#demo{
   float: right;
 }
 .range1{
   position: relative;
-  right: 80px;
-  top: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 600px;
+  right: 30px;
   height: 80px;
   width: 380px;
   background: #fff;
@@ -242,9 +246,9 @@ html,body{
   position: relative;
   outline: none;
   top: -720px;
-  right: 20px;
+  right: 70px;
   height: 360px;
-  width: 480px;
+  width: 600px;
   border: 0;
   font-size: 30px;
   font-weight: bold;
@@ -255,4 +259,12 @@ html,body{
   color: #664AFF;
   box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
   z-index: 2;
+}
+
+video{
+  position: relative;
+  top: 4%;
+  width: 99%;
+  border-radius: 20px;
+  z-index: 4;
 }
