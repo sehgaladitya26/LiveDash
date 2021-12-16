@@ -3,6 +3,7 @@
 
 <head>
     <title>Dashboard | Focal Length </title>
+    <title>Dashboard | Focal Length </title>
     <script>
         var myInterval;
         function myfunction() {
@@ -32,11 +33,11 @@
             // })
             return false;
         }
-        
+
         document.addEventListener('DOMContentLoaded', () => {
 
             //setInterval(myTimer, 500);
-            
+
             // document.querySelector('form').onsubmit = function () {
             //     const target = document.querySelector('#get_bool').value;
             //     document.querySelector('#result2').innerHTML = target;
@@ -76,8 +77,8 @@
             }
             cur.value = v1;
             document.getElementById(ID + "s").innerHTML = v1;
-            console.log(String.fromCharCode(ID.charCodeAt(0)-68));
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" +  String.fromCharCode(ID.charCodeAt(0)-68) + "=" + v1)
+            console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
         }
 
         function decrement(ID) {
@@ -90,8 +91,8 @@
             }
             cur.value = v1;
             document.getElementById(ID + "s").innerHTML = v1;
-            console.log(String.fromCharCode(ID.charCodeAt(0)-68));
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0)-68) + "=" + v1)
+            console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
         }
     </script>
     <link rel="stylesheet" href="style2.css">
@@ -101,8 +102,8 @@
     <div class="range1">
         <nav class="navbar">
             <a id="focal_head" href="#focal">focal length</a>
-            <!-- <a id="countdown"></a> -->
-            <!-- <script src="script.js"></script> -->
+            <a id="demo"></a>
+            <script src="script.js"></script>
         </nav>
         <div class="slidervalue1">
             <span id="us">0</span>
@@ -111,14 +112,14 @@
 
         <div class="field1">
             <div class="value left">0</div>
-            <input type="range" min="0.0" max="47.0" value="0.0" step="0.1" id="u">
-            <div class="value right">47</div>
+            <input type="range" min="0.0" max="10.0" value="0.0" step="0.1" id="u">
+            <div class="value right">10</div>
             <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
         </div>
-        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1" >+</button>
+        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1">+</button>
         <button type="button" onclick='decrement("u")' class="btn_minus" id="btn_minus1">-</button>
     </div>
-    
+    <br />
     <div class="range1">
         <div class="slidervalue1">
             <span id="vs">0</span>
@@ -127,17 +128,29 @@
 
         <div class="field1">
             <div class="value left">0</div>
-            <input type="range" min="0.0" max="47.0" value="0.0" step="0.1" id="v">
-            <div class="value right">47</div>
+            <input type="range" min="0.0" max="10.0" value="0.0" step="0.1" id="v">
+            <div class="value right">10</div>
             <div class="v_label" id="v_label" data-hover="Image"><span></span></div>
         </div>
         <button type="button" onclick='increment("v")' class="btn_plus" id="btn_plus2">+</button>
         <button type="button" onclick='decrement("v")' class="btn_minus" id="btn_minus2">-</button>
         <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
-        <div class="stream">Stream</div>
-        <script>
-            
-        </script>
+        <!-- <script>
+            function myfunction() {
+                console.log("tu pagal hai kya??")
+                document.getElementById("bt1").innerHTML = "Recalibrating";
+                document.querySelector("#us").innerHTML = "0";
+                document.querySelector("#vs").innerHTML = "0";
+                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+            }
+        </script> -->
+        <div class="stream">
+            <video controls>
+                <source src="video.mp4" type="video/mp4">browser unsupported
+            </video>
+            </video>
+        </div>
+
     </div>
 </body>
 
