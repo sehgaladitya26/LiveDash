@@ -1,25 +1,42 @@
-const startingMinutes = 5;
-let time = startingMinutes*60;
+var time = 5; // This is the time allowed
+var time_seconds = time*60; // This is time allowed in seconds
+var saved_countdown = sessionStorage.getItem('saved_countdown');
 
-const countdownEl = document.getElementById("countdown");
+if(saved_countdown == null) {
+    // Set the time we're counting down to using the time allowed
+    var new_countdown = new Date().getTime() + (time_seconds+1) * 1000;
 
-var x = setInterval(updateCountdown, 1000);
+    time = new_countdown;
+    sessionStorage.setItem('saved_countdown', new_countdown);
+} else {
+    time = saved_countdown;
+}
 
-function updateCountdown() {
-    var minutes = Math.floor(time / 60);
+// Update the count down every 1 second
+var x = setInterval(() => {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the allowed time
+    var distance = time - now;
+
+    // Time counter
+    var minutes = Math.floor((distance / 60)/1000);
     var formattedMinutes = ("0" + minutes).slice(-2);
-    var seconds = time % 60;
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     var formattedSeconds = ("0" + seconds).slice(-2);
 
-    countdownEl.innerHTML = formattedMinutes + ":" + formattedSeconds;
-    time--;
-
-    if (time < 0)
-    {
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = formattedMinutes + ":" + formattedSeconds;
+        
+    // If the count down is over, write some text 
+    if (distance <= 0) {
         clearInterval(x);
-        document.getElementById("countdown").innerHTML = "Session Ended";
+        sessionStorage.removeItem('saved_countdown');
+        document.getElementById("demo").innerHTML = "Session Ended";
         setTimeout(function(){
             location.replace("exp.html");
         }, 2000);
     }
-}
+}, 1000);
