@@ -4,95 +4,18 @@
 <head>
     <title>Dashboard | Focal Length </title>
     <title>Dashboard | Focal Length </title>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
     <script>
-        var myInterval;
-        function myfunction() {
-            console.log("tu pagal hai kya??")
-            document.getElementById("bt1").innerHTML = "Recalibrating";
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-            myInterval = setInterval(myTimer, 500);
+        //check for Navigation Timing API support
+        if (window.performance) {
+        console.info("window.performance works fine on this browser");
         }
-
-        function myTimer() {
-            //document.querySelector('form').onsubmit = function () {
-            fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0')
-                .then(response => response.json())
-                .then(data => {
-                    const myJSON = JSON.stringify(data)
-                    if (myJSON == "0") {
-                        document.getElementById("bt1").innerHTML = "Recalibrate";
-                        clearInterval(myInterval);
-                        document.querySelector("#u").value = 0;
-                        document.querySelector("#v").value = 0;
-                        document.querySelector("#us").innerHTML = "0";
-                        document.querySelector("#vs").innerHTML = "0";
-                    }
-                });
-            // .catch(error => {
-            //     console.log('Error:', error);
-            // })
-            return false;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            //setInterval(myTimer, 500);
-
-            // document.querySelector('form').onsubmit = function () {
-            //     const target = document.querySelector('#get_bool').value;
-            //     document.querySelector('#result2').innerHTML = target;
-            //     //console.log(target);
-            //     fetch("https://blynk.cloud/external/api/update?token=PIhHUS2rhKB6AlJQeN7TGcMh326zGV4-&v1=" + target)
-            //     // document.querySelector('#result').innerHTML = target;
-            //     return false;
-            // }
-
-            const inputslider_u = document.querySelector("#u");
-            inputslider_u.oninput = () => {
-                let value1 = inputslider_u.value;
-                document.querySelector("#us").innerHTML = value1;
-                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
-
-                return false;
-            }
-
-            const inputslider_v = document.querySelector("#v");
-            inputslider_v.oninput = () => {
-                let value2 = inputslider_v.value;
-                document.querySelector("#vs").innerHTML = value2;
-                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + value2)
-
-                return false;
-            }
-
-        });
-
-        function increment(ID) {
-            console.log("Haan main pagal hai for " + ID);
-            const cur = document.getElementById(ID);
-            var v1 = cur.value;
-            v1 = (Number(v1) + Number(cur.step)).toFixed(1);
-            if (Number(v1) > 47) {
-                v1 = 47.0;
-            }
-            cur.value = v1;
-            document.getElementById(ID + "s").innerHTML = v1;
-            console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
-        }
-
-        function decrement(ID) {
-            console.log("Haan main pagal hai for " + ID);
-            const cur = document.getElementById(ID);
-            var v1 = cur.value;
-            v1 = (Number(v1) - Number(cur.step)).toFixed(1);
-            if (Number(v1) < 0.0) {
-                v1 = 0.0;
-            }
-            cur.value = v1;
-            document.getElementById(ID + "s").innerHTML = v1;
-            console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
-            fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+        console.info(performance.navigation.type);
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        console.info( "This page is reloaded" );
+        } else {
+        console.info( "This page is not reloaded");
         }
     </script>
     <link rel="stylesheet" href="style2.css">
@@ -103,7 +26,6 @@
         <nav class="navbar">
             <a id="focal_head" href="#focal">focal length</a>
             <a id="demo"></a>
-            <script src="script.js"></script>
         </nav>
         <div class="slidervalue1">
             <span id="us">0</span>

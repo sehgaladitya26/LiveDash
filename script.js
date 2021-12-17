@@ -1,42 +1,115 @@
-var time = 5; // This is the time allowed
-var time_seconds = time*60; // This is time allowed in seconds
-var saved_countdown = sessionStorage.getItem('saved_countdown');
-
-if(saved_countdown == null) {
-    // Set the time we're counting down to using the time allowed
-    var new_countdown = new Date().getTime() + (time_seconds+1) * 1000;
-
-    time = new_countdown;
-    sessionStorage.setItem('saved_countdown', new_countdown);
-} else {
-    time = saved_countdown;
+var myInterval;
+function myfunction() {
+    console.log("tu pagal hai kya??")
+    document.getElementById("bt1").innerHTML = "Recalibrating";
+    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+    myInterval = setInterval(myTimer, 500);
 }
 
-// Update the count down every 1 second
-var x = setInterval(() => {
+function myTimer() {
+    //document.querySelector('form').onsubmit = function () {
+    fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0')
+        .then(response => response.json())
+        .then(data => {
+            const myJSON = JSON.stringify(data)
+            if (myJSON == "0") {
+                document.getElementById("bt1").innerHTML = "Recalibrate";
+                clearInterval(myInterval);
+                document.querySelector("#u").value = 0;
+                document.querySelector("#v").value = 0;
+                document.querySelector("#us").innerHTML = "0";
+                document.querySelector("#vs").innerHTML = "0";
+            }
+        });
+    // .catch(error => {
+    //     console.log('Error:', error);
+    // })
+    return false;
+}
 
-    // Get today's date and time
-    var now = new Date().getTime();
+var saved_u_val;
+var saved_v_val;
 
-    // Find the distance between now and the allowed time
-    var distance = time - now;
+document.addEventListener('DOMContentLoaded', () => {
 
-    // Time counter
-    var minutes = Math.floor((distance / 60)/1000);
-    var formattedMinutes = ("0" + minutes).slice(-2);
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    var formattedSeconds = ("0" + seconds).slice(-2);
+    saved_u_val = sessionStorage.getItem('saved_val_u');
+    saved_v_val = sessionStorage.getItem('saved_val_v');
+    console.log(saved_u_val);
+    console.log(saved_v_val);
 
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = formattedMinutes + ":" + formattedSeconds;
-        
-    // If the count down is over, write some text 
-    if (distance <= 0) {
-        clearInterval(x);
-        sessionStorage.removeItem('saved_countdown');
-        document.getElementById("demo").innerHTML = "Session Ended";
-        setTimeout(function(){
-            location.replace("exp.html");
-        }, 2000);
+    if(saved_u_val == null && saved_v_val == null){
+        saved_u_val = 0;
+        saved_v_val = 0;
+        sessionStorage.setItem('saved_val_u', saved_u_val);
+        sessionStorage.setItem('saved_val_v', saved_v_val);
+        console.log(saved_u_val);
+        console.log(saved_v_val);
     }
-}, 1000);
+    console.log('Yes, I am mad');
+    document.querySelector("#vs").innerHTML = saved_v_val;
+    document.querySelector("#us").innerHTML = saved_u_val;
+    document.querySelector("#u").value = saved_u_val;
+    document.querySelector("#v").value = saved_v_val;
+
+    //setInterval(myTimer, 500);
+
+    // document.querySelector('form').onsubmit = function () {
+    //     const target = document.querySelector('#get_bool').value;
+    //     document.querySelector('#result2').innerHTML = target;
+    //     //console.log(target);
+    //     fetch("https://blynk.cloud/external/api/update?token=PIhHUS2rhKB6AlJQeN7TGcMh326zGV4-&v1=" + target)
+    //     // document.querySelector('#result').innerHTML = target;
+    //     return false;
+    // }
+
+    const inputslider_u = document.querySelector("#u");
+    inputslider_u.oninput = () => {
+        let value1 = inputslider_u.value;
+        document.querySelector("#us").innerHTML = value1;
+        fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
+        sessionStorage.setItem('saved_val_u', value1);
+        console.log(value1);
+
+        return false;
+    }
+
+    const inputslider_v = document.querySelector("#v");
+    inputslider_v.oninput = () => {
+        let value2 = inputslider_v.value;
+        document.querySelector("#vs").innerHTML = value2;
+        fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + value2)
+        sessionStorage.setItem('saved_val_v', value2);
+        console.log(value2);
+
+        return false;
+    }
+
+});
+
+function increment(ID) {
+    console.log("Haan main pagal hai for " + ID);
+    const cur = document.getElementById(ID);
+    var v1 = cur.value;
+    v1 = (Number(v1) + Number(cur.step)).toFixed(1);
+    if (Number(v1) > 47) {
+        v1 = 47.0;
+    }
+    cur.value = v1;
+    document.getElementById(ID + "s").innerHTML = v1;
+    console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+}
+
+function decrement(ID) {
+    console.log("Haan main pagal hai for " + ID);
+    const cur = document.getElementById(ID);
+    var v1 = cur.value;
+    v1 = (Number(v1) - Number(cur.step)).toFixed(1);
+    if (Number(v1) < 0.0) {
+        v1 = 0.0;
+    }
+    cur.value = v1;
+    document.getElementById(ID + "s").innerHTML = v1;
+    console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+}
