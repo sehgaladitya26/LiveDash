@@ -36,7 +36,7 @@ var x = setInterval(() => {
         sessionStorage.removeItem('saved_countdown');
         document.getElementById("demo").innerHTML = "Session Ended";
         setTimeout(function(){
-            location.replace("exp.html");
+            location.replace("home_page/home.html");
         }, 2000);
     }
 }, 1000);
