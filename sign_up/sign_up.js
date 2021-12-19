@@ -62,9 +62,10 @@ signupForm.addEventListener('submit', (e) => {
         .then((cred) => {
             // console.log(cred.user)
 
-            // close the login modal and reset the form
-            const modal = document.querySelector('#modal-signup');
-            M.Modal.getInstance(modal).close();
+            location.href = "../home_page/home.html";
+        
+            // reset the form
+            
             signupForm.reset();
         })
         .catch((err) => {
