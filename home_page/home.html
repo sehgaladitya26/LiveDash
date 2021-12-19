@@ -13,15 +13,15 @@
 <body>
     <nav class="navbar">
         <a id="focal_head" href="#focal">Remote Triggered Lab</a>
-        <button id="sign_up">Sign Up</button>
-        <button id="sign_in">Sign In</button>
+        <button id="sign_up" onclick="myFunction_sup()">Sign Up</button>
+        <button id="sign_in" onclick="myFunction_sin()">Sign In</button>
     </nav>
     <div class="container">
         <div class="box">
             <div class="imgBx">
                 <img src="img2.jpg">
             </div>
-            <div class="content">
+            <div class="content" type="button" onclick="myFunction2()">
                 <div>
                     <h2>Focal Length</h2>
                 </div>
@@ -52,6 +52,17 @@
             </div>
         </div>
     </div>
+    <script>
+        function myFunction_sin(){
+            location.href='../sign_in/sign_in.html';
+        }
+        function myFunction_sup(){
+            location.href='../sign_up/sign_up.html';
+        }
+        function myFunction2(){
+            location.href='../create.html';
+        }
+    </script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@ body{
 
 .navbar{
     overflow: hidden;
-    background-image: var(--gradient);
+    background: #333333;
     background-size: 200%;
     background-position: right;
     transition: background-position 1s;
