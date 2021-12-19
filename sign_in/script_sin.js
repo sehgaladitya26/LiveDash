@@ -60,7 +60,7 @@ loginForm.addEventListener('submit', (e) => {
             console.log(cred.user)
 
             //close the login modal and reset the form
-            
+            location.href = "../home_page/home.html";
             loginForm.reset();
         })
         .catch((err)=>{
