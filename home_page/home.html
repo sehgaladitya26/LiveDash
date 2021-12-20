@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home | RTL</title>
+    <link rel="stylesheet" href="style_home.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+        </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
+        <button id="sign_up" onclick="myFunction_sup()">Sign Up</button>
+        <button id="sign_in" onclick="myFunction_sin()">Sign In</button>
+    </nav>
+    <div class="container">
+        <div class="box">
+            <div class="imgBx">
+                <img src="img2.jpg">
+            </div>
+            <div class="content" type="button" onclick="myFunction2()">
+                <div>
+                    <h2>Focal Length</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="imgBx">
+                <img src="img1.jpg">
+            </div>
+            <div class="content">
+                <div>
+                    <h2>Pendulum</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="imgBx" id="">
+                <img src="img3.jpg">
+            </div>
+            <div class="content">
+                <div>
+                    <h2>Vanishing Rod</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction_sin(){
+            location.href='../sign_in/sign_in.html';
+        }
+        function myFunction_sup(){
+            location.href='../sign_up/sign_up.html';
+        }
+        function myFunction2(){
+            location.href='../index.html';
+        }
+    </script>
+</body>
+
+</html>
