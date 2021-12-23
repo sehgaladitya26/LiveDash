@@ -7,6 +7,11 @@ body{
     /* background: url("bg_img.png"); */
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(139, 139, 139);
+    opacity: 1; /* Firefox */
+  }
+  
 *{
     margin: 0;
     padding: 0;
@@ -91,15 +96,28 @@ form button{
     font-size: 16px;
     font-weight: bolder;
     font-family: "Poppins",sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+form button:hover{
+    background: #37ce62;
+    color: #000000;
+    font-weight: bolder;
 }
 .content p{
     width: 260px;
     color: #7e7e7e;
-    font-size: 13px;
+    font-size: 15px;
 }
 .content p a{
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.content p a:hover{
+    color: #2ea54f;
 }
 .words{
     position: relative;
