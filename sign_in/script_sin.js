@@ -65,5 +65,6 @@ loginForm.addEventListener('submit', (e) => {
         })
         .catch((err)=>{
             console.log(err.message)
+            alert(err.message);
         })
 });
