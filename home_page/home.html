@@ -20,7 +20,7 @@
             <div class="imgBx">
                 <img src="img2.jpg">
             </div>
-            <div class="content" type="button" onclick="myFunction2()">
+            <div class="content" type="button" onclick="myFunction1()">
                 <div>
                     <h2>Focal Length</h2>
                 </div>
@@ -44,7 +44,7 @@
             <div class="imgBx" id="">
                 <img src="img3.jpg">
             </div>
-            <div class="content">
+            <div class="content" type="button" onclick="myFunction2()">
                 <div>
                     <h2>Vanishing Rod</h2>
                 </div>
@@ -53,8 +53,11 @@
     </div>
     <script type="module" src="script_lgout.js"></script>
     <script>
-        function myFunction2(){
+        function myFunction1(){
             location.href='../focal_length/index.html';
+        }
+        function myFunction3(){
+            location.href='../vanish/vanish.html';
         }
     </script>
 </body>
