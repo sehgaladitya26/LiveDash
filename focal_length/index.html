@@ -37,12 +37,12 @@
 
         <div class="field1">
             <div class="value left">0</div>
-            <input type="range" min="0.0" max="43.0" value="0.0" step="0.1" id="u">
-            <div class="value right">43</div>
+            <input type="range" min="0.0" max="10.0" value="0.0" step="0.1" id="u">
+            <div class="value right">10</div>
             <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
         </div>
-        <button type="button" onclick='increment("u");focal_distance("f","u","v")' class="btn_plus" id="btn_plus1">+</button>
-        <button type="button" onclick='increment("u");focal_distance("f","u","v")' class="btn_minus" id="btn_minus1">-</button>
+        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1">+</button>
+        <button type="button" onclick='decrement("u")' class="btn_minus" id="btn_minus1">-</button>
     </div>
     <br />
     <div class="range1">
@@ -53,12 +53,12 @@
 
         <div class="field1">
             <div class="value left">0</div>
-            <input type="range" min="0.0" max="43.0" value="0.0" step="0.1" id="v">
-            <div class="value right">43</div>
+            <input type="range" min="0.0" max="10.0" value="0.0" step="0.1" id="v">
+            <div class="value right">10</div>
             <div class="v_label" id="v_label" data-hover="Image"><span></span></div>
         </div>
-        <button type="button" onclick='increment("v");focal_distance("f","u","v")' class="btn_plus" id="btn_plus2">+</button>
-        <button type="button" onclick='increment("v");focal_distance("f","u","v")' class="btn_minus" id="btn_minus2">-</button>
+        <button type="button" onclick= 'increment("v")' class="btn_plus" id="btn_plus2">+</button>
+        <button type="button" onclick= 'decrement("v")' class="btn_minus" id="btn_minus2">-</button>
         <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
         <div class="stream">
             <video controls>
