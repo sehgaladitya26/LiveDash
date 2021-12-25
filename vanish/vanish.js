@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //     return false;
     // }
 
-    const inputslider_u = document.querySelector("#u");
+});
+
+const inputslider_u = document.querySelector("#u");
     inputslider_u.onchange = () => {
         let value1 = inputslider_u.value;
         document.querySelector("#us").innerHTML = value1;
@@ -72,8 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return false;
     }
-
-});
 
 function increment(ID) {
     console.log("Haan main pagal hai for " + ID);
