@@ -100,6 +100,6 @@ function decrement(ID) {
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
-    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v=" + v1)
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + v1)
 }
 
