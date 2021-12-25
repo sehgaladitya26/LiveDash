@@ -79,27 +79,27 @@ function increment(ID) {
     console.log("Haan main pagal hai for " + ID);
     const cur = document.getElementById(ID);
     var v1 = cur.value;
-    v1 = (Number(v1) + Number(cur.step)).toFixed(1);
-    if (Number(v1) > 47) {
-        v1 = 47.0;
+    v1 = (Number(v1) + Number(cur.step));
+    if (Number(v1) > 10) {
+        v1 = 10;
     }
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
-    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + v1)
 }
 
 function decrement(ID) {
     console.log("Haan main pagal hai for " + ID);
     const cur = document.getElementById(ID);
     var v1 = cur.value;
-    v1 = (Number(v1) - Number(cur.step)).toFixed(1);
+    v1 = (Number(v1) - Number(cur.step));
     if (Number(v1) < 0.0) {
         v1 = 0.0;
     }
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
-    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v=" + v1)
 }
 
