@@ -94,8 +94,8 @@ function decrement(ID) {
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) - Number(cur.step));
-    if (Number(v1) < 0.0) {
-        v1 = 0.0;
+    if (Number(v1) < 0) {
+        v1 = 0;
     }
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
