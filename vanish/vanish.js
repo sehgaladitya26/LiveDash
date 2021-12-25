@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
     const inputslider_u = document.querySelector("#u");
-    inputslider_u.oninput = () => {
+    inputslider_u.onchange = () => {
         let value1 = inputslider_u.value;
         document.querySelector("#us").innerHTML = value1;
         fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + value1)
