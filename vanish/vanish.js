@@ -2,13 +2,13 @@ var myInterval;
 function myfunction() {
     console.log("tu pagal hai kya??")
     document.getElementById("bt1").innerHTML = "Recalibrating";
-    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
     myInterval = setInterval(myTimer, 500);
 }
 
 function myTimer() {
     //document.querySelector('form').onsubmit = function () {
-    fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0')
+    fetch('https://blynk.cloud/external/api/get?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0')
         .then(response => response.json())
         .then(data => {
             const myJSON = JSON.stringify(data)
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     inputslider_u.oninput = () => {
         let value1 = inputslider_u.value;
         document.querySelector("#us").innerHTML = value1;
-        fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
+        fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + value1)
         sessionStorage.setItem('saved_val_u', value1);
         console.log(value1);
 
@@ -86,7 +86,7 @@ function increment(ID) {
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
-    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
 }
 
 function decrement(ID) {
@@ -100,6 +100,6 @@ function decrement(ID) {
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
-    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
 }
 
