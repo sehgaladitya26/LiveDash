@@ -105,3 +105,9 @@ function decrement(ID) {
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + v1)
 }
 
+function leave(){
+    sessionStorage.clear();
+    console.log("DONE");
+    location.replace("../home_page/home.html")
+}
+
