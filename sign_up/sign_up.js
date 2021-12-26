@@ -9,11 +9,14 @@ import {
     createUserWithEmailAndPassword,
     signOut,
     signInWithEmailAndPassword,
+    sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
 import {
     getFirestore,
     collection,
+    doc,
+    setDoc,
     getDocs,
     addDoc,
     onSnapshot,
