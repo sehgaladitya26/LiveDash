@@ -55,7 +55,7 @@
     height: 80px;
     width: 380px;
     background: #fff;
-    
+    cursor: pointer;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     padding: 0 65px 0 45px;
@@ -66,7 +66,7 @@
     position: relative;
     outline: none;
     top: -40px;
-    right: -30px;
+    right: 20px;
     height: 60px;
     width: 380px;
     border: 0;
@@ -78,6 +78,13 @@
     background: #fff;
     color: #664AFF;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+
+  .btn-1:hover{
+    background: #664AFF;
+    color: #fff;
   }
   
   .range1 .btn_plus{
@@ -117,6 +124,7 @@
     padding: 0px 0px;
     border-radius: 40px;
     background: #fff;
+    cursor: pointer;
     color: rgb(189, 189, 189);
     transition: all 0.2s ease-out;
   }
@@ -240,9 +248,9 @@
     position: relative;
     outline: none;
     top: -650px;
-    right: 70px;
-    height: 360px;
-    width: 600px;
+    right: 180px;
+    height: 400px;
+    width: 675px;
     border: 0;
     font-size: 30px;
     font-weight: bold;
@@ -255,13 +263,14 @@
     z-index: 2;
   }
   
-  video{
+  .stream .live{
     position: relative;
-    top: 4%;
-    width: 99%;
+    top: 1%;
+    right: 2%;
     border-radius: 10px;
     z-index: 4;
   }
+
   .range1 .focal_val{
     position: relative;
     height: 21vh;
