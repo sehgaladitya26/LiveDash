@@ -1,3 +1,12 @@
+:root{
+  --gradient: linear-gradient(
+      337deg,
+      #664AFF,
+      #9e4aff,
+      #bd8af7
+  )
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -44,6 +53,23 @@
     font-size: 200%;
     font-family: "Poppins",sans-serif;
     float: right;
+    top: 5%;
+    right: 2%;
+  }
+
+  #session{
+    font-size: 120%;
+    font-family: "Poppins",sans-serif;
+    background-image: var(--gradient);
+    top: 20%;
+    right: 1%;
+    padding: 0px 10px 0px 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    color: #fff;
+    line-height: 2;
+    float: right;
+
   }
   .range1{
     position: relative;
