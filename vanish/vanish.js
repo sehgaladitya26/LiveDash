@@ -16,9 +16,9 @@ function myTimer() {
                 document.getElementById("bt1").innerHTML = "Recalibrate";
                 clearInterval(myInterval);
                 document.querySelector("#u").value = 0;
-                document.querySelector("#v").value = 0;
+                // document.querySelector("#v").value = 0;
                 document.querySelector("#us").innerHTML = "0";
-                document.querySelector("#vs").innerHTML = "0";
+                // document.querySelector("#vs").innerHTML = "0";
             }
         });
     // .catch(error => {
@@ -28,28 +28,28 @@ function myTimer() {
 }
 
 var saved_u_val;
-var saved_v_val;
+// var saved_v_val;
 
 document.addEventListener('DOMContentLoaded', () => {
 
     saved_u_val = sessionStorage.getItem('saved_val_u');
-    saved_v_val = sessionStorage.getItem('saved_val_v');
+    // saved_v_val = sessionStorage.getItem('saved_val_v');
     console.log(saved_u_val);
-    console.log(saved_v_val);
+    // console.log(saved_v_val);
 
-    if(saved_u_val == null && saved_v_val == null){
+    if(saved_u_val == null){
         saved_u_val = 0;
-        saved_v_val = 0;
+        // saved_v_val = 0;
         sessionStorage.setItem('saved_val_u', saved_u_val);
-        sessionStorage.setItem('saved_val_v', saved_v_val);
+        // sessionStorage.setItem('saved_val_v', saved_v_val);
         console.log(saved_u_val);
-        console.log(saved_v_val);
+        // console.log(saved_v_val);
     }
     console.log('Yes, I am mad');
-    document.querySelector("#vs").innerHTML = saved_v_val;
+    // document.querySelector("#vs").innerHTML = saved_v_val;
     document.querySelector("#us").innerHTML = saved_u_val;
     document.querySelector("#u").value = saved_u_val;
-    document.querySelector("#v").value = saved_v_val;
+    // document.querySelector("#v").value = saved_v_val;
 
     //setInterval(myTimer, 500);
 
@@ -62,18 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
     //     return false;
     // }
 
-});
-
-const inputslider_u = document.querySelector("#u");
-    inputslider_u.onchange = () => {
+    const inputslider_u = document.querySelector("#u");
+    inputslider_u.oninput = () => {
         let value1 = inputslider_u.value;
         document.querySelector("#us").innerHTML = value1;
         fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + value1)
         sessionStorage.setItem('saved_val_u', value1);
         console.log(value1);
 
-        return false;
+    return false;
     }
+
+});
 
 function increment(ID) {
     console.log("Haan main pagal hai for " + ID);
