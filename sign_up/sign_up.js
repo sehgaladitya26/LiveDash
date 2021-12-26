@@ -52,6 +52,7 @@ signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // get user info
+    const name = signupForm['signup-name'].value;
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
 
@@ -60,15 +61,23 @@ signupForm.addEventListener('submit', (e) => {
     // sign up the user
     createUserWithEmailAndPassword(auth, email, password)
         .then((cred) => {
-            // console.log(cred.user)
+            sendEmailVerification(auth.currentUser)
+                .then(() => {
+                    // Email verification sent!
+                    const collRef = collection(db, 'Users');
 
-            location.href = "../home_page/home.html";
-        
-            // reset the form
-            
-            signupForm.reset();
+                    setDoc(doc(collRef, cred.user.uid), {
+                        Name: name,
+                        Email: email,
+                        'User created': serverTimestamp(),
+                        'Last login': serverTimestamp(),
+                        'Email Verified': 'False'
+                    }).then(() => {
+                        location.href = "../sign_in/sign_in.html";
+                    })
+                });
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err.message)
         })
 });
