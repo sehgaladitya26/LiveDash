@@ -57,13 +57,31 @@ loginForm.addEventListener('submit', (e) => {
 
     signInWithEmailAndPassword(auth, email, password)
         .then((cred) => {
-            console.log(cred.user)
+            
+            // Check if user is verified or not
+            if (cred.user.emailVerified == 1) {
+                const docRef = doc(db, 'Users', cred.user.uid);
 
-            //close the login modal and reset the form
-            location.href = "../home_page/home.html";
-            loginForm.reset();
+                updateDoc(docRef, {
+                    'Last login': serverTimestamp(),
+                    'Email Verified': 'True'
+                }).then(() => {
+                    // Save user uid
+                    sessionStorage.setItem('uid', cred.user.uid);
+
+                    location.href = "../home_page/home.html";
+
+                    //close the login modal and reset the form
+                    loginForm.reset();
+                });
+            } else {
+                console.log("Email not verified");
+                // sessionStorage.setItem("cred", JSON.stringify(auth.currentUser));
+                // console.log(auth.currentUser);
+                location.href = "Not_verified.html";
+            }
         })
-        .catch((err)=>{
+        .catch((err) => {
             console.log(err.message)
             alert(err.message);
         })
