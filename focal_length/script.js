@@ -1,4 +1,7 @@
 var myInterval;
+var value1;
+var value2;
+
 function myfunction() {
     console.log("tu pagal hai kya??")
     document.getElementById("bt1").innerHTML = "Recalibrating";
@@ -50,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#us").innerHTML = saved_u_val;
     document.querySelector("#u").value = saved_u_val;
     document.querySelector("#v").value = saved_v_val;
+    document.querySelector("#f").innerHTML = ((parseFloat(saved_v_val)*parseFloat(saved_u_val))/(parseFloat(saved_u_val) - parseFloat(saved_v_val))).toFixed(1);
 
     //setInterval(myTimer, 500);
 
@@ -64,23 +68,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const inputslider_u = document.querySelector("#u");
     inputslider_u.oninput = () => {
-        let value1 = inputslider_u.value;
+        value1 = inputslider_u.value;
         document.querySelector("#us").innerHTML = value1;
         fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
         sessionStorage.setItem('saved_val_u', value1);
         console.log(value1);
-
+        document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
         return false;
     }
 
     const inputslider_v = document.querySelector("#v");
     inputslider_v.oninput = () => {
-        let value2 = inputslider_v.value;
+        value2 = inputslider_v.value;
         document.querySelector("#vs").innerHTML = value2;
         fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + value2)
         sessionStorage.setItem('saved_val_v', value2);
         console.log(value2);
-
+        document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
         return false;
     }
 
@@ -91,13 +95,21 @@ function increment(ID) {
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) + Number(cur.step)).toFixed(1);
-    if (Number(v1) > 47) {
-        v1 = 47.0;
+    if (Number(v1) > 43) {
+        v1 = 43.0;
     }
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+    sessionStorage.setItem("saved_val_"+ID, v1);
+    if(ID == "u"){
+        value1 = v1;
+    }else{
+        value2 = v1;
+    }
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+    document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
+
 }
 
 function decrement(ID) {
@@ -111,5 +123,14 @@ function decrement(ID) {
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+    sessionStorage.setItem("saved_val_"+ID, v1);
+    if(ID == "u"){
+        value1 = v1;
+    }else{
+        value2 = v1;
+    }
+
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
+    document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
+
 }
