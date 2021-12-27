@@ -47,13 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('saved_val_v', saved_v_val);
         console.log(saved_u_val);
         console.log(saved_v_val);
+        
     }
+    value1 = saved_u_val;
+    value2 = saved_v_val;
     console.log('Yes, I am mad');
     document.querySelector("#vs").innerHTML = saved_v_val;
     document.querySelector("#us").innerHTML = saved_u_val;
     document.querySelector("#u").value = saved_u_val;
     document.querySelector("#v").value = saved_v_val;
-    document.querySelector("#f").innerHTML = ((parseFloat(saved_v_val)*parseFloat(saved_u_val))/(parseFloat(saved_u_val) - parseFloat(saved_v_val))).toFixed(1);
+    document.querySelector("#f").innerHTML = ((parseFloat(saved_v_val)*parseFloat(saved_u_val))/(parseFloat(saved_u_val) + parseFloat(saved_v_val))).toFixed(2);
 
     //setInterval(myTimer, 500);
 
@@ -72,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector("#us").innerHTML = value1;
         fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
         sessionStorage.setItem('saved_val_u', value1);
-        console.log(value1);
-        document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
+        console.log(value1 + "and" + value2);
+        document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
         return false;
     }
 
@@ -83,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector("#vs").innerHTML = value2;
         fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + value2)
         sessionStorage.setItem('saved_val_v', value2);
-        console.log(value2);
-        document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
+        console.log(value2 + "and" + value1);
+        document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
         return false;
     }
 
@@ -108,7 +111,7 @@ function increment(ID) {
         value2 = v1;
     }
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
-    document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
+    document.querySelector("#f").innerHTML = parseFloat((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
 
 }
 
@@ -131,6 +134,18 @@ function decrement(ID) {
     }
 
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
-    document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) - parseFloat(value2))).toFixed(1);
+    document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
 
 }
+
+function leave(){
+    sessionStorage.clear();
+    console.log("DONE");
+    console.log("YES");
+    location.replace("../home_page/home.html")
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+}
+
+window.addEventListener('beforeunload',  () => {
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+});

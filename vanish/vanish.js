@@ -108,6 +108,12 @@ function decrement(ID) {
 function leave(){
     sessionStorage.clear();
     console.log("DONE");
+    console.log("YES");
     location.replace("../home_page/home.html")
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
 }
+
+window.addEventListener('beforeunload',  () => {
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+});
 
