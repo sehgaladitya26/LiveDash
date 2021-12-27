@@ -1,3 +1,12 @@
+:root{
+  --gradient: linear-gradient(
+      337deg,
+      #664AFF,
+      #9e4aff,
+      #bd8af7
+  )
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -44,14 +53,32 @@ html,body{
   font-size: 200%;
   font-family: "Poppins",sans-serif;
   float: right;
+  top: 5%;
+  right: 2%;
 }
+
+#session{
+  font-size: 120%;
+  font-family: "Poppins",sans-serif;
+  background-image: var(--gradient);
+  top: 20%;
+  right: 1%;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  color: #fff;
+  line-height: 2;
+  float: right;
+
+}
+
 .range1{
   position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
   top: 600px;
-  right: 30px;
+  right: 80px;
   height: 80px;
   width: 380px;
   background: #fff;
@@ -242,19 +269,36 @@ html,body{
 #u_label:hover::after{
   content: "Object:";
 }
-
-
 .range1 .stream{
   position: relative;
+  top: -180px;
+  right: -120px;
+}
+
+.range1 .stream .live1{
+  position: relative;
   outline: none;
-  top: -720px;
-  right: 70px;
-  height: 360px;
-  width: 600px;
-  border: 0;
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 10;
+  top: -776px;
+  right: 650px;
+  height: 420px;
+  width: 760px;
+  border: 10px;
+  padding: 16px 30px;
+  border-radius: 20px;
+  background: #fff;
+  color: #664AFF;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.range1 .stream .live2{
+  position: relative;
+  outline: none;
+  top: -1200px;
+  right: -120px;
+  height: 420px;
+  width: 750px;
+  border: 10px;
   padding: 16px 30px;
   border-radius: 20px;
   background: #fff;
@@ -272,9 +316,9 @@ video{
 }
 .range1 .focal_val{
   position: relative;
-  height: 21vh;
-  width: 10vw;
-  top: -660px;
+  height: 180px;
+  width: 180px;
+  top: -300px;
   right: -58.8vh;
   background: #fff;
   /* font-family: "Poppins",sans-serif; */
