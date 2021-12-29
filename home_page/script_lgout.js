@@ -14,6 +14,8 @@ import {
 import {
     getFirestore,
     collection,
+    doc,
+    getDoc,
     getDocs,
     addDoc,
     onSnapshot,
@@ -67,6 +69,25 @@ const db = getFirestore();
 //             console.log(err.message)
 //         })
 // });
+
+// Get user uid
+const uid = sessionStorage.getItem('uid');
+
+// console.log(uid);
+
+// Get document refernce
+const docRef = doc(db, 'Users', uid);
+
+getDoc(docRef)
+    .then((doc) => {
+        // console.log(doc.data(), doc.id);
+
+        const data = doc.data();
+
+        document.getElementById('User').innerHTML = data.Name;  
+
+    })
+
 // logout
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
