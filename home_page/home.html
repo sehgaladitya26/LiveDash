@@ -2,65 +2,111 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Home | RTL</title>
-    <link rel="stylesheet" href="style_home.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
-        </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+	</style>
+	<title>Game Card</title>
+	<link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
-    <nav class="navbar">
-        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
-        <p id="User"></p>
-        <button id="logout">Log-Out</button>
-    </nav>
-    <div class="container">
-        <div class="box">
-            <div class="imgBx">
-                <img src="img2.jpg">
-            </div>
-            <div class="content" type="button" onclick="myFunction1()">
-                <div>
-                    <h2>Focal Length</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="box">
-            <div class="imgBx">
-                <img src="img1.jpg">
-            </div>
-            <div class="content">
-                <div>
-                    <h2>Pendulum</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="box">
-            <div class="imgBx" id="">
-                <img src="img3.jpg">
-            </div>
-            <div class="content" type="button" onclick="myFunction3()">
-                <div>
-                    <h2>Vanishing Rod</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="module" src="script_lgout.js"></script>
-    <script>
-        function myFunction1(){
-            location.href='../focal_length/index.html';
-        }
-        function myFunction3(){
-            location.href='../vanish/vanish.html';
-        }
-    </script>
+	<nav class="navbar">
+		<a id="focal_head" href="#focal">Remote Triggered Lab</a>
+		<p id="User"></p>
+		<button id="logout">Log-Out</button>
+	</nav>
+
+	<div class="card" id="fl">
+		<div class="card__inner" id="fl_in">
+			<div class="card__face card__face--front">
+				<img src="img2.jpg" alt="" class="p1" />
+				<h2 class="expe1"><br />Focal Length</h2>
+				<div class="in_queue">In-queue:<span value="7"> 7</span>
+					<img src="arrow.png" class="arrow" alt="" />
+				</div>
+			</div>
+			<div class="card__face card__face--back">
+				<div class="card__content">
+					<div class="card__header">
+						<img src="img2.jpg" alt="" class="pp" />
+						<h2>pendulum</h2>
+					</div>
+					<div class="card__body">
+						<h3>Overview</h3>
+						<p>Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit.
+							Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien
+							placerat, <strong>laoreet</strong> tincidunt nulla.</p>
+						<div class="targets">
+							<button id="theory">Theory</button>
+							<button id="experiment">Dashboard</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card" id="pend">
+		<div class="card__inner" id="pend_in">
+			<div class="card__face card__face--front">
+				<img src="img1.jpg" alt="" class="p1" />
+				<h2 class="expe1">Pendulum</h2>
+				<div class="in_queue">In-queue:<span value="7"> 7</span>
+					<img src="arrow.png" class="arrow" alt="" />
+				</div>
+			</div>
+			<div class="card__face card__face--back">
+				<div class="card__content">
+					<div class="card__header">
+						<img src="img1.jpg" alt="" class="pp" />
+						<h2>pendulum</h2>
+					</div>
+					<div class="card__body">
+						<h3>Overview</h3>
+						<p>Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit.
+							Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien
+							placerat, <strong>laoreet</strong> tincidunt nulla.</p>
+						<div class="targets">
+							<button id="theory" onclick="function_pend()">Theory</button>
+							<button id="experiment">Dashboard</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card" id="van">
+		<div class="card__inner" id="van_in">
+			<div class="card__face card__face--front">
+				<img src="img3.jpg" alt="" class="p1" />
+				<h2 class="expe1"><br />Vanishing Rod</h2>
+				<div class="in_queue">In-queue:<span value="7"> 7</span>
+					<img src="arrow.png" class="arrow" alt="" />
+				</div>
+			</div>
+			<div class="card__face card__face--back">
+				<div class="card__content">
+					<div class="card__header">
+						<img src="img3.jpg" alt="" class="pp" />
+						<h2>VANISHING ROD</h2>
+					</div>
+					<div class="card__body">
+						<h3>Overview</h3>
+						<p>Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit.
+							Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien
+							placerat, <strong>laoreet</strong> tincidunt nulla.</p>
+						<div class="targets">
+							<button id="theory">Theory</button>
+							<button id="experiment">Dashboard</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="main.js"></script>
+	<script type="module" src="script_lgout.js"></script>
 </body>
 
 </html>
