@@ -33,7 +33,7 @@ function pendulum_exp(){
 }
 
 function focal_exp(){
-  location.href='../focal/index.html';
+  location.href='../focal_length/index.html';
 }
 
 function vanish_exp(){
