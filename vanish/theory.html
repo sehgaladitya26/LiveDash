@@ -1,61 +1,69 @@
-* {
-  font-family: 'Roboto', sans-serif;
-}
+<!DOCTYPE html>
+<html>
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: "Roboto Slab", serif;
-}
+<head>
+    <title>Dashboard | Focal Length </title>
+    <script src="vanish.js"></script>
+    <script src="timer.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+    </style>
+    <script>
+        //check for Navigation Timing API support
+        if (window.performance) {
+            console.info("window.performance works fine on this browser");
+        }
+        console.info(performance.navigation.type);
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            console.info("This page is reloaded");
+        } else {
+            console.info("This page is not reloaded");
+        }
+    </script>
+    <link rel="stylesheet" href="theory.css">
+</head>
 
-body {
-  display: grid;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background: linear-gradient(90deg, #052e6c,#481e48);
-}
+<body>
+    <div class="header">
+        Vanishing Rod Experiment
+    </div><br/>
+    <div class="expand-card">
+        <details>
+            <summary>Aim:</summary>
+            <p>This experiment aims to depict the concept of refraction and the phenomenon of
+                invisibility of an object if reflection is removed.</p>
+        </details>
+    </div><br/>
 
-.header{
-  font-family: "Bebas Neue", cursive;
-  font-size: 600%;
-  color: #fff;
-  font-weight: bold;
-}
+    <div class="expand-card">
+        <details>
+            <summary>Apparatus:</summary>
+            <p>The apparatus used in the experiment is Glass rods, sunflower oil, water, glass
+                beakers. (Make sure that the refractive index of the glass being used is similar to the
+                refractive index of the oil.)</p>
+        </details>
+    </div><br/>
 
-.expand-card {
-  width: 50vw;
-  border-radius: 1em;
-  background: linear-gradient(375deg, #fff,rgb(182, 182, 182));
-  box-shadow: 0 1em 10px rgba(0,0,100,0.2);
-  padding: 1em;
-}
+    <div class="expand-card">
+        <details>
+            <summary>Physics of the Experiment:</summary>
+            <p>The main physics behind the experiment can be summarized as:
+            <ul>
+                <li>Whatever we see around us is due to the light which gets reflected from the object
+                    and reaches our eyes.</li>
+                <li>If this reflection is somehow removed, then no light will reach the observer and hence
+                    he/she will not be able to see the object, effectively making it invisible.</li>
+                <li>When the rod is immersed in water, due to different refractive indices of the water
+                    and the glass, light bends to different degrees in both the mediums and hence we are
+                    able to discern between the separate mediums.</li>
+                <li>On the other hand, when the glass rod is immersed in oil, since the refractive indices
+                    are similar, light behaves as if it is passing through a homogenous medium. As a result,
+                    our eyes are not able to differentiate between the glass rod and the oil and hence the
+                    rod appears to have disappeared.</li>
+            </ul>
+            </p>
+        </details>
+    </div>
+</body>
 
-summary{
-  font-size: 250%;
-  font-family: 'Poppins',sans-serif;
-}
-
-details {
-  transition: 0.5s ease-in-out;
-  text-align: justify;
-  font-family: 'Poppins',sans-serif;
-}
-
-details[open] summary ~ * {
-  animation: reveal 0.5s alternate ease-in-out;
-}
-
-details {
-  transition: .4s ease-in-out;
-}
-
-@keyframes reveal {
-  0% {
-    margin-left: -10px;
-    opacity: 0;
-  }
-  100% {
-    margin-left: 0;
-    opacity: 1;
-  }
-}
+</html>
