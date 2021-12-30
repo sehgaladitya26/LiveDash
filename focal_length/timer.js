@@ -36,7 +36,9 @@ var x = setInterval(() => {
         sessionStorage.removeItem('saved_countdown');
         document.getElementById("demo").innerHTML = "Session Ended";
         setTimeout(function(){
+            sessionStorage.clear();
             location.replace("../home_page/home.html");
+            fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
         }, 2000);
     }
 }, 1000);
