@@ -314,7 +314,7 @@ body {
   padding: 0px 10px 0 10px;
   position: relative;
   top: 15px;
-  right: 0px;
+  right: -100px;
   float: right;
   background-size: 200%;
   background-position: right;
