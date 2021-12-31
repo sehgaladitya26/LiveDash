@@ -85,8 +85,8 @@
         <button type="button" class="save" onclick='save_vals()' id='IDK'>Save Values</button>
         <button type="button" class="download" onclick='download_vals()' id='wtf'>Download Values</button>
         <div class="stream">
-            <iframe class = "live1" width="720" height="405" src="https://www.youtube.com/embed/g2t_xvHjVYs" title="YouTube video player" frameborder="0" allow = "autoplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe class = "live2" width="720" height="405" src="https://www.youtube.com/embed/NfAcCuoBvyE" title="YouTube video player" frameborder="0" allow = "autoplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="live1" class = "live1" width="720" height="405" title="YouTube video player" frameborder="0" allow = "autoplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="live2" class = "live2" width="720" height="405" title="YouTube video player" frameborder="0" allow = "autoplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         
@@ -99,6 +99,8 @@
                 fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
             }
         </script> -->
+        
+        <script type="module" src="video.js"></script>
 
     </div>
 </body>
