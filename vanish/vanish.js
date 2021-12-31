@@ -17,7 +17,7 @@ function myTimer() {
                 clearInterval(myInterval);
                 document.querySelector("#u").value = 0;
                 // document.querySelector("#v").value = 0;
-                document.querySelector("#us").innerHTML = "0";
+                document.querySelector("#us").innerHTML = "1";
                 // document.querySelector("#vs").innerHTML = "0";
             }
         });
