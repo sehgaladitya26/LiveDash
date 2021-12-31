@@ -20,7 +20,7 @@ html,body{
   width: 150%; */
   text-align: center;
   place-items: center;
-  background: linear-gradient(90deg, #052e6c,#040d21,#481e48);
+  background: linear-gradient(90deg, #052e6c,#481e48);
 }
 
 .navbar{
@@ -69,7 +69,7 @@ html,body{
   color: #fff;
   line-height: 2;
   float: right;
-
+  cursor: pointer;
 }
 
 .range1{
@@ -86,24 +86,6 @@ html,body{
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 0 65px 0 45px;
-  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
-}
-
-.btn-1{
-  position: relative;
-  outline: none;
-  top: -40px;
-  right: -30px;
-  height: 60px;
-  width: 380px;
-  border: 0;
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 1;
-  padding: 16px 30px;
-  border-radius: 40px;
-  background: #fff;
-  color: #664AFF;
   box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
 }
 
@@ -255,23 +237,23 @@ html,body{
 }
 
 #v_label::after{
-  content: "v";
-}
-
-#u_label::after{
-  content: "u";
-}
-
-#v_label:hover::after{
   content: "Image:";
 }
 
-#u_label:hover::after{
+#u_label::after{
   content: "Object:";
+}
+
+#v_label:hover::after{
+  content: "u";
+}
+
+#u_label:hover::after{
+  content: "v";
 }
 .range1 .stream{
   position: relative;
-  top: -180px;
+  top: -260px;
   right: -120px;
 }
 
@@ -316,10 +298,12 @@ video{
 }
 .range1 .focal_val{
   position: relative;
+  display: block;
+  overflow: hidden;
   height: 180px;
   width: 180px;
   top: -300px;
-  right: -58.8vh;
+  right: -520px;
   background: #fff;
   /* font-family: "Poppins",sans-serif; */
   line-height: 2;
@@ -332,4 +316,79 @@ video{
   color: #664AFF;
   font-size: 55px;
   font-weight: 500;
+}
+#IDK {
+  position: relative;
+  outline: none;
+  top: -280px;
+  right: 220px;
+  height: 60px;
+  width: 250px;
+  border: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 16px 30px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background: #fff;
+  color: #664AFF;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+#IDK:hover{
+  background: #664AFF;
+  color: #fff;
+}
+
+#wtf {
+  position: relative;
+  outline: none;
+  top: -340px;
+  right: -45px;
+  height: 60px;
+  width: 300px;
+  border: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 16px 15px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background: #fff;
+  color: #664AFF;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+#wtf:hover{
+  background: #664AFF;
+  color: #fff;
+}
+.btn-1{
+  position: relative;
+  outline: none;
+  top: -40px;
+  right: -400px;
+  height: 60px;
+  width: 300px;
+  border: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 16px 30px;
+  border-radius: 40px;
+  background: #fff;
+  color: #664AFF;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.btn-1:hover{
+  background: #664AFF;
+  color: #fff;
 }
