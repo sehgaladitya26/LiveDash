@@ -82,8 +82,7 @@
     width: 380px;
     background: #fff;
     cursor: pointer;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 20px;
     padding: 0 65px 0 45px;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
   }
