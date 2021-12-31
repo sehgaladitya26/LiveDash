@@ -167,3 +167,27 @@ function save_vals(){
     data.push(exp_data);
     localStorage.setItem('experiment_Data', JSON.stringify(data));
 };
+
+function download_vals() {
+    csvStr = JSON2CSV();
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvStr);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'output.csv';
+    hiddenElement.click();
+};
+function JSON2CSV() {
+    JsonArray = JSON.parse(localStorage.getItem('experiment_Data'));
+    JsonFields = ["u_val","v_val","f_val"]
+    var csvStr = JsonFields.join(",") + "\n";
+
+    JsonArray.forEach(element => {
+        u_val = element.u_val;
+        v_val = element.v_val;
+        f_val = element.f_val;
+
+        csvStr += u_val + ',' + v_val + ','  + f_val + "\n";
+    })
+    return csvStr;
+
+}
