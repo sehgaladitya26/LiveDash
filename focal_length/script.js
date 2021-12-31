@@ -139,7 +139,9 @@ function decrement(ID) {
 }
 
 function leave(){
-    sessionStorage.clear();
+    sessionStorage.removeItem("saved_countdown");
+    sessionStorage.removeItem("saved_val_v");
+    sessionStorage.removeItem("saved_val_u");
     console.log("DONE");
     console.log("YES");
     location.replace("../home_page/home.html")
