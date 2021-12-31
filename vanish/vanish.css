@@ -262,11 +262,11 @@
   }
 
   #u_label::after{
-    content: "L";
+    content: "Direction:";
   }
   
   #u_label:hover::after{
-    content: "Length:";
+    content: "D";
   }
   
   
