@@ -29,13 +29,12 @@
         window.history.pushState('forward', null, './#forward');
 
         $(window).on('popstate', function() {
-            // alert('Are you sure you want to exit?' + '\n' +  'WARNING: You will loose all your progress' + '\n' + '\n' + 'Click Back again to exit');
+            //alert('Are you sure you want to exit?' + '\n' +  'WARNING: You will loose all your progress' + '\n' + '\n' + 'Click Back again to exit');
             sessionStorage.removeItem("saved_countdown");
             sessionStorage.removeItem("saved_val_v");
             sessionStorage.removeItem("saved_val_u");
             location.replace("../home_page/home.html");
             fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-
         });
 
         }
