@@ -160,12 +160,14 @@
   }
   
   .range1 .slidervalue1{
+    display: hidden;
     position: relative;
     width: 100%;
     height: 0%;
   }
   
   .range1 .slidervalue1 span{
+    display: hidden;
     font-size: 35px;
     position: absolute;
     height: 80px;
@@ -182,6 +184,7 @@
   }
   
   .range1 .slidervalue1 label{
+    display: hidden;
     font-size: 25px;
     position: absolute;
     height: 80px;
