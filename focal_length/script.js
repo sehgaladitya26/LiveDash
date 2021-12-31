@@ -1,6 +1,8 @@
 var myInterval;
 var value1;
 var value2;
+var data = [];
+var counter = 0;
 
 function myfunction() {
     console.log("tu pagal hai kya??")
@@ -45,9 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
         saved_v_val = 0;
         sessionStorage.setItem('saved_val_u', saved_u_val);
         sessionStorage.setItem('saved_val_v', saved_v_val);
+        sessionStorage.setItem('count', counter);
         console.log(saved_u_val);
         console.log(saved_v_val);
-        
+        localStorage.setItem('experiment_Data', JSON.stringify(data));        
     }
     value1 = saved_u_val;
     value2 = saved_v_val;
@@ -151,3 +154,16 @@ function leave(){
 window.addEventListener('beforeunload',  () => {
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
 });
+
+function save_vals(){
+    counter = counter + 1;
+    sessionStorage.setItem("count", counter);
+    const data = JSON.parse(localStorage.getItem('experiment_Data'));
+    const exp_data = {
+        "u_val" : value1,
+        "v_val" : value2,
+        "f_val" : ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2),
+    };
+    data.push(exp_data);
+    localStorage.setItem('experiment_Data', JSON.stringify(data));
+};
