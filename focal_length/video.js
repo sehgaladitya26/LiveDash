@@ -75,6 +75,7 @@ getDoc(docRef)
                         .then((data2) => {
                             const id = data2.items[0].id.videoId;
                             document.getElementById('live1').src = paste.concat(id)
+                            document.getElementById('live2').src = paste.concat(id)
                             
                             updateDoc(docRef, {
                                 id: id
