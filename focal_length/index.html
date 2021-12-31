@@ -33,8 +33,9 @@
             sessionStorage.removeItem("saved_countdown");
             sessionStorage.removeItem("saved_val_v");
             sessionStorage.removeItem("saved_val_u");
+            location.replace("../home_page/home.html");
             fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-            location.replace("../home_page/home.html")
+
         });
 
         }

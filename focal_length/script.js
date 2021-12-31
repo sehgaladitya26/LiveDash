@@ -150,11 +150,8 @@ function leave(){
 }
 
 window.addEventListener('beforeunload',  () => {
-    sessionStorage.removeItem("saved_countdown");
-    sessionStorage.removeItem("saved_val_v");
-    sessionStorage.removeItem("saved_val_u");
-    document.querySelector("#f").innerHTML = 0;
-    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+    document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
+    // fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
 });
 
 function save_vals(){
