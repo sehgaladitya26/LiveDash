@@ -150,9 +150,9 @@ function leave(){
 }
 
 window.addEventListener('beforeunload',  () => {
-    sessionStorage.removeItem("saved_countdown");
     sessionStorage.removeItem("saved_val_v");
     sessionStorage.removeItem("saved_val_u");
+    document.querySelector("#f").innerHTML = 0;
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
 });
 
