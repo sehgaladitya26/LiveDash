@@ -146,14 +146,14 @@ function leave(){
     console.log("DONE");
     console.log("YES");
     location.replace("../home_page/home.html")
-    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
 }
 
 window.addEventListener('beforeunload',  () => {
     sessionStorage.removeItem("saved_val_v");
     sessionStorage.removeItem("saved_val_u");
     document.querySelector("#f").innerHTML = 0;
-    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
 });
 
 function save_vals(){
