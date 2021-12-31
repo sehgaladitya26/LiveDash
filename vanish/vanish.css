@@ -91,7 +91,7 @@
     position: relative;
     outline: none;
     top: -140px;
-    right: -350px;
+    right: -340px;
     height: 80px;
     width: 250px;
     border: 0;
@@ -99,7 +99,7 @@
     font-weight: bold;
     line-height: 1;
     padding: 16px 30px;
-    border-radius: 40px;
+    border-radius: 20px;
     background: #fff;
     color: #664AFF;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
@@ -276,7 +276,7 @@
     position: relative;
     outline: none;
     top: -650px;
-    right: 180px;
+    right: 140px;
     height: 400px;
     width: 675px;
     border: 0;
