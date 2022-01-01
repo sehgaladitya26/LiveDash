@@ -37,16 +37,13 @@ function focal_exp(){
 }
 
 function vanish_exp(){
-  location.href='../vanish/vanish.html';
-}
-
-function vanish_exp(){
   fetch('https://blynk.cloud/external/api/get?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3')
     .then(response => response.json())
     .then(data => {
       const myJSON = JSON.stringify(data)
       if (myJSON == "0") {
         location.href='../vanish/vanish.html';
+        fetch('https://blynk.cloud/external/api/get?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3=1')
       }else{
         location.href='../vanish/queue.html'
       }})
