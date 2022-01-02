@@ -69,6 +69,7 @@ getDoc(docRef)
                 const len = data1.items.length;
                 if (len > 0) {
                     document.getElementById('live1').src = paste.concat(data_id)
+                    document.getElementById('live2').src = paste.concat(data_id)
                 } else {
                     fetch("https://youtube.googleapis.com/youtube/v3/search?channelId=UCeiBfHvmA3wZEIQLcGwIjkw&eventType=live&type=video&key=AIzaSyBG0wbSgmzZRT4bEYO7lhgrna5hm3_S24o")
                         .then(response => response.json())
