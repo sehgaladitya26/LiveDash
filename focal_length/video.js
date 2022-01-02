@@ -69,14 +69,14 @@ getDoc(docRef)
             
                 if (data1.items[0].snippet.liveBroadcastContent == "live") {
                     document.getElementById('live1').src = paste.concat(data_id).concat("?autoplay=1");
-                    document.getElementById('live2').src = paste.concat(data_id);
+                    document.getElementById('live2').src = paste.concat(data_id).concat("?autoplay=1");
                 } else {
                     fetch("https://youtube.googleapis.com/youtube/v3/search?channelId=UCLA_DiR1FfKNvjuUpBHmylQ&eventType=live&type=video&key=AIzaSyBG0wbSgmzZRT4bEYO7lhgrna5hm3_S24o")
                         .then(response => response.json())
                         .then((data2) => {
                             const id = data2.items[0].id.videoId;
                             document.getElementById('live1').src = paste.concat(id).concat("?autoplay=1");
-                            document.getElementById('live2').src = paste.concat(id);
+                            document.getElementById('live2').src = paste.concat(id).concat("?autoplay=1");
                             
                             updateDoc(docRef, {
                                 id: id
