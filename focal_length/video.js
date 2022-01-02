@@ -49,7 +49,7 @@ const auth = getAuth();
 // Initialize firestore
 const db = getFirestore();
 
-const start = "https://youtube.googleapis.com/youtube/v3/videos?id="
+const start = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id="
 const paste = "https://www.youtube.com/embed/"
 
 // Get document refernce
