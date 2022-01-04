@@ -18,6 +18,7 @@
 
 body {
   display: flex;
+  flex-wrap: wrap;
   font-family: montserrat, sans-serif;
   width: 100%;
   min-height: 100vh;
