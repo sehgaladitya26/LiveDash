@@ -99,9 +99,10 @@ onSnapshot(collRef, (Snap) => {
             const time = data["Time to Join"];
 
             (async () => {
-                const q1 = await getDocs(query(collRef, where("Time to Join", "<=", time)));
-
-                document.getElementById('que_pos').innerHTML = " " + q1.docs.length;
+                const q2 = await getDocs(query(collRef, where("Time to Join", "<=", time)));
+                if (q2.docs.length != 0) {
+                    document.getElementById('que_pos').innerHTML = " " + q2.docs.length;
+                }
             })()
         })
 })
