@@ -59,41 +59,42 @@ const uid = sessionStorage.getItem('uid');
 // var time;
 const q1 = await getDocs(query(collRef, where("uid", "==", uid)));
 
-if(q1.docs.length == 0) {
+if (q1.docs.length == 0) {
     const q = query(collRef);
     onSnapshot(q, (Snap) => {
-        document.getElementById('que_pos').innerHTML = " " + Snap.docs.length; 
+        document.getElementById('que_pos').innerHTML = " " + Snap.docs.length;
     })
 } else {
     const data = q1.docs[0].data();
     const time = data["Time to Join"];
-    
+
     const q2 = query(collRef, where("Time to Join", "<=", time));
 
     onSnapshot(q2, (Snap) => {
-        document.getElementById('que_pos').innerHTML = " " + Snap.docs.length; 
+        document.getElementById('que_pos').innerHTML = " " + Snap.docs.length;
     })
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("FUCK THE HELL OFF")
-    (async () => {
-        const q = await getDocs(query(collRef, where("uid", "==", uid)));
 
-        const ttj = new Date().getTime();
 
-        sessionStorage.setItem("ttj", ttj);
+(async () => {
+    const q = await getDocs(query(collRef, where("uid", "==", uid)));
 
-        if (q.docs.length == 0) {
-            setDoc(doc(collRef, uid), {
-                uid: uid,
-                "Time to Join": ttj
-            }).then(async () => {
-                const q = await getDocs(query(collRef, where("Time to Join", "<=", ttj)));
+    const ttj = new Date().getTime();
 
-                document.getElementById('que_pos').innerHTML = " " + q.docs.length;
-            })
-        }
-    })()
-})
+    sessionStorage.setItem("ttj", ttj);
+
+    if (q.docs.length == 0) {
+        setDoc(doc(collRef, uid), {
+            uid: uid,
+            "Time to Join": ttj
+        }).then(async () => {
+            const q = await getDocs(query(collRef, where("Time to Join", "<=", ttj)));
+
+            document.getElementById('que_pos').innerHTML = " " + q.docs.length;
+        })
+    }
+})()
+
+
