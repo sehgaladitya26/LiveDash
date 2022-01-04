@@ -25,7 +25,7 @@ function vanish_theory(){
 }
 
 function focal_theory(){
-  location.href='../focal/theory.html';
+  location.href='../focal_length/theory.html';
 }
 
 function pendulum_exp(){

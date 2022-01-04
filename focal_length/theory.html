@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard | Focal Length </title>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+    </style>
+    <script>
+        //check for Navigation Timing API support
+        if (window.performance) {
+            console.info("window.performance works fine on this browser");
+        }
+        console.info(performance.navigation.type);
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            console.info("This page is reloaded");
+        } else {
+            console.info("This page is not reloaded");
+        }
+    </script>
+    <link rel="stylesheet" href="theory.css">
+</head>
+
+<body>
+    <div class="header">
+        Focal Length Experiment
+    </div><br/>
+    <div class="expand-card">
+        <details>
+            <summary>Aim:</summary>
+            <p>To calculate focal length of a biconvex lens by observing image formation by the lens on an IoT enabled optical bench.</p>
+        </details>
+    </div><br/>
+
+    <div class="expand-card">
+        <details>
+            <summary>Apparatus:</summary>
+            <ul><li>
+                Biconvex lens of focal length 10-15 cm.
+            </li>
+            <li>
+                An asymmetric light emitting object.
+            </li>
+            <li>
+                A white screen
+            </li>
+            <li>
+                Optical bench 
+            </li></ul>
+        </details>
+    </div><br/>
+
+    <div class="expand-card">
+        <details>
+            <summary>Physics of the Experiment:</summary>
+            <p>The main physics behind the experiment can be summarized as:</p>
+            <p>To calculate the focal length of a lens you should be familiar with basic concepts of refraction of light from a lens and lens formula which will be used to calculate the focal length by obtaining object and image distances with proper sign convention.
+                The lens formula is given by:
+            </p>
+            <p>$$\frac{1}{f}=\frac{1}{v}-\frac{1}{u}$$</p>
+            <p>In the above formula, v = Image distance, u = Object Distance, f = Focal Length</p>
+        </details>
+    </div>
+</body>
+
+</html>
