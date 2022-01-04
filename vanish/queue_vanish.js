@@ -17,6 +17,7 @@ import {
     collection,
     doc,
     setDoc,
+    getDoc,
     getDocs,
     addDoc,
     deleteDoc,
@@ -57,59 +58,76 @@ const collRef = collection(db, 'Queue_Vanish');
 // Get user uid
 const uid = sessionStorage.getItem('uid');
 
-// var time;
-const q1 = await getDocs(query(collRef, where("uid", "==", uid)));
+const q = await getDocs(query(collRef, where("uid", "==", uid)));
 
-if (q1.docs.length == 0) {
-    const q = query(collRef);
-    onSnapshot(q, (Snap) => {
-        document.getElementById('que_pos').innerHTML = " " + Snap.docs.length;
+if (q.docs.length == 0) {
+    setDoc(doc(collRef, uid), {
+        uid: uid,
+        "Time to Join": serverTimestamp()
+    }).then(() => {
+        const docRef = doc(collRef, uid);
+
+        getDoc(docRef)
+            .then((doc) => {
+                const data = doc.data();
+                const time = data["Time to Join"];
+
+                (async () => {
+                    const q1 = await getDocs(query(collRef, where("Time to Join", "<=", time)));
+
+                    document.getElementById('que_pos').innerHTML = " " + q1.docs.length;
+                })()
+            })
     })
-} else {
-    const data = q1.docs[0].data();
+} else if (q.docs.length == 1) {
+    const data = q.docs[0].data();
     const time = data["Time to Join"];
 
-    const q2 = query(collRef, where("Time to Join", "<=", time));
+    (async () => {
+        const q1 = await getDocs(query(collRef, where("Time to Join", "<=", time)));
 
-    onSnapshot(q2, (Snap) => {
-        document.getElementById('que_pos').innerHTML = " " + Snap.docs.length;
-    })
+        document.getElementById('que_pos').innerHTML = " " + q1.docs.length;
+    })()
 }
 
-(async () => {
-    const q = await getDocs(query(collRef, where("uid", "==", uid)));
+onSnapshot(collRef, (Snap) => {
+    const docRef = doc(collRef, uid);
 
-    const ttj = new Date().getTime();
+    getDoc(docRef)
+        .then((doc) => {
+            const data = doc.data();
+            const time = data["Time to Join"];
 
-    sessionStorage.setItem("ttj", ttj);
+            (async () => {
+                const q1 = await getDocs(query(collRef, where("Time to Join", "<=", time)));
 
-    if (q.docs.length == 0) {
-        setDoc(doc(collRef, uid), {
-            uid: uid,
-            "Time to Join": ttj
-        }).then(async () => {
-            const q = await getDocs(query(collRef, where("Time to Join", "<=", ttj)));
-
-            document.getElementById('que_pos').innerHTML = " " + q.docs.length;
+                document.getElementById('que_pos').innerHTML = " " + q1.docs.length;
+            })()
         })
-    }
 })
 
-var Free_or_not = setInterval(myTimer, 30000);
+var Free_or_not = setInterval(myTimer, 2000);
 function myTimer() {
     //document.querySelector('form').onsubmit = function () {
     fetch('https://blynk.cloud/external/api/get?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3')
         .then(response => response.json())
         .then(data => {
             const myJSON = JSON.stringify(data)
-            if (myJSON == "0" && Number(document.getElementById('que_pos') == 1)) {
-                location.href = 'vanish.html'
-                remove_from_queue();
+            console.log(document.getElementById('que_pos').innerHTML == 1)
+            if (myJSON == "0" && Number(document.getElementById('que_pos').innerHTML == 1)) {
+                deleteDoc(doc(db, "Queue_Vanish", uid))
+                    .then(() => {
+                        location.href = 'vanish.html';
+                        fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3=1")
+                    });
                 clearInterval(Free_or_not);
-    }})}
-
-function remove_from_queue(){
-    deleteDoc(doc(db, "Queue_Vanish", uid));
+            }
+        })
 }
+
+
+
+
+
 
 
