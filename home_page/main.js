@@ -51,3 +51,13 @@ function vanish_exp(){
       }
     })
 }
+
+window.addEventListener("orientationchange", ()=> {
+  if(window.orientation == 90){
+    console.log("landscape");
+    document.querySelector('.head').style.display = 'block'
+  }else{
+    console.log("portrait");
+    document.querySelector('.head').style.display = 'none'
+  }
+})
