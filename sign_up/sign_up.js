@@ -76,6 +76,7 @@ signupForm.addEventListener('submit', (e) => {
                         'Last login': serverTimestamp(),
                         'Email Verified': 'False'
                     }).then(() => {
+                        alert("Email Verification Mail Has Been Sent,\n Please confirm your Email-ID to continue");
                         location.href = "../sign_in/sign_in.html";
                     })
                 });
