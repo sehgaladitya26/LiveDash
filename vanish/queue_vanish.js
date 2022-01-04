@@ -19,6 +19,7 @@ import {
     setDoc,
     getDocs,
     addDoc,
+    deleteDoc,
     onSnapshot,
     query,
     orderBy,
@@ -95,6 +96,23 @@ if (q1.docs.length == 0) {
             document.getElementById('que_pos').innerHTML = " " + q.docs.length;
         })
     }
-})()
+})
+
+var Free_or_not = setInterval(myTimer, 30000);
+function myTimer() {
+    //document.querySelector('form').onsubmit = function () {
+    fetch('https://blynk.cloud/external/api/get?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3')
+        .then(response => response.json())
+        .then(data => {
+            const myJSON = JSON.stringify(data)
+            if (myJSON == "0" && Number(document.getElementById('que_pos') == 1)) {
+                location.href = 'vanish.html'
+                remove_from_queue();
+                clearInterval(Free_or_not);
+    }})}
+
+function remove_from_queue(){
+    await deleteDoc(doc(db, "Queue_Vanish", uid));
+}
 
 
