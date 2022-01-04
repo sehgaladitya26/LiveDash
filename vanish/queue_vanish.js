@@ -76,9 +76,6 @@ if (q1.docs.length == 0) {
     })
 }
 
-
-
-
 (async () => {
     const q = await getDocs(query(collRef, where("uid", "==", uid)));
 
@@ -112,7 +109,7 @@ function myTimer() {
     }})}
 
 function remove_from_queue(){
-    await deleteDoc(doc(db, "Queue_Vanish", uid));
+    deleteDoc(doc(db, "Queue_Vanish", uid));
 }
 
 
