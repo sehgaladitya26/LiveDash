@@ -55,9 +55,9 @@ const db = getFirestore();
 // Get collection reference
 const collRef = collection(db, 'Queue_Vanish');
 
-const q0 = await getDocs(query(collRef));
+// const q0 = await getDocs(query(collRef));
 
-document.getElementById('que_pos').innerHTML = " " + q0.docs.length + 1;
+// document.getElementById('que_pos').innerHTML = " " + q0.docs.length;
 
 // Get user uid
 const uid = sessionStorage.getItem('uid');
