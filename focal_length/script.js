@@ -36,6 +36,10 @@ var saved_v_val;
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    if(typeof uid === 'undefined'){
+        location.href = '../sign_in/sign_in.html'
+    }
+
     saved_u_val = sessionStorage.getItem('saved_val_u');
     saved_v_val = sessionStorage.getItem('saved_val_v');
     console.log(saved_u_val);

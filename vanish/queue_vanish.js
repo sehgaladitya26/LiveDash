@@ -130,6 +130,10 @@ function myTimer() {
         })
 }
 
+if(typeof uid === 'undefined'){
+    location.href = '../sign_in/sign_in.html'
+  }
+
 
 
 

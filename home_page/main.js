@@ -52,6 +52,13 @@ function vanish_exp(){
     })
 }
 
+window.addEventListener('DOMContentLoaded', () => {
+  if(typeof uid === 'undefined'){
+    location.href = '../sign_in/sign_in.html'
+  }
+})
+
+
 window.addEventListener("orientationchange", ()=> {
   if(window.orientation == 90){
     console.log("landscape");
