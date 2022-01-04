@@ -19,10 +19,10 @@ function myTimer() {
             if (myJSON == "0") {
                 document.getElementById("bt1").innerHTML = "Recalibrate";
                 clearInterval(myInterval);
-                document.querySelector("#u").value = 0;
-                document.querySelector("#v").value = 0;
-                document.querySelector("#us").innerHTML = "0";
-                document.querySelector("#vs").innerHTML = "0";
+                document.querySelector("#u").value = 7.6;
+                document.querySelector("#v").value = 6.5;
+                document.querySelector("#us").innerHTML = "7.6";
+                document.querySelector("#vs").innerHTML = "6.5";
             }
         });
     // .catch(error => {
@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(saved_v_val);
 
     if(saved_u_val == null && saved_v_val == null){
-        saved_u_val = 0;
-        saved_v_val = 0;
+        saved_u_val = 7.6;
+        saved_v_val = 6.5;
         sessionStorage.setItem('saved_val_u', saved_u_val);
         sessionStorage.setItem('saved_val_v', saved_v_val);
         console.log(saved_u_val);
@@ -99,18 +99,26 @@ function increment(ID) {
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) + Number(cur.step)).toFixed(1);
-    if (Number(v1) > 43) {
-        v1 = 43.0;
+    if(ID == "u"){
+        if(Number(v1) > 49.0){
+            v1 = 49.0;
+        }
+        value1 = v1;
+    }else{
+        if(Number(v1) > 48.0){
+            v1 = 48.0;
+        }
+        value2 = v1;
     }
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
     sessionStorage.setItem("saved_val_"+ID, v1);
-    if(ID == "u"){
-        value1 = v1;
-    }else{
-        value2 = v1;
-    }
+    // if(ID == "u"){
+    //     value1 = v1;
+    // }else{
+    //     value2 = v1;
+    // }
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
     document.querySelector("#f").innerHTML = parseFloat((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
 
@@ -121,18 +129,25 @@ function decrement(ID) {
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) - Number(cur.step)).toFixed(1);
-    if (Number(v1) < 0.0) {
-        v1 = 0.0;
-    }
+    // if (Number(v1) < 0.0) {
+    //     v1 = 0.0;
+    // }
     cur.value = v1;
+    if(ID == "u"){
+        if(Number(v1) < 7.6){
+            v1 = 7.6;
+        }
+        value1 = v1;
+    }else{
+        if(Number(v1) < 6.5){
+            v1 = 6.5;
+        }
+        value2 = v1;
+    }
     document.getElementById(ID + "s").innerHTML = v1;
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
     sessionStorage.setItem("saved_val_"+ID, v1);
-    if(ID == "u"){
-        value1 = v1;
-    }else{
-        value2 = v1;
-    }
+    
 
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v" + String.fromCharCode(ID.charCodeAt(0) - 68) + "=" + v1)
     document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
