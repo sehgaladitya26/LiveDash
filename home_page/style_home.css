@@ -138,7 +138,7 @@ body {
 
 .card__face--back {
   background-color: var(--light);
-  transform: rotateY(180deg);
+  transform: rotateY(360deg);
 }
 
 .card__content {
