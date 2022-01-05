@@ -115,7 +115,9 @@ function leave(){
     sessionStorage.removeItem("saved_val_u");
     console.log("DONE");
     console.log("YES");
-    location.replace("../home_page/home.html")
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3=0")
+        .then(() => {
+            location.replace("../home_page/home.html")
+        })
 }
