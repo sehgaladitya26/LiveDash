@@ -5,7 +5,8 @@
     <title>Dashboard | Focal Length </title>
     <script src="script.js"></script>
     <script src="timer.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
     </style>
@@ -21,95 +22,96 @@
             console.info("This page is not reloaded");
         }
     </script>
-    <script>
-        jQuery(document).ready(function ($) {
-
-            if (window.history && window.history.pushState) {
-
-                window.history.pushState('forward', null, './#forward');
-
-                $(window).on('popstate', function () {
-                    //alert('Are you sure you want to exit?' + '\n' +  'WARNING: You will loose all your progress' + '\n' + '\n' + 'Click Back again to exit');
-                    sessionStorage.removeItem("saved_countdown");
-                    sessionStorage.removeItem("saved_val_v");
-                    sessionStorage.removeItem("saved_val_u");
-                    location.replace("../home_page/home.html");
-                    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-                });
-
-            }
-        });
-    </script>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="theory.css">
 </head>
 
 <body>
-    <div class="stream">
-        <iframe id="live1" class="live1" width="540" height="220" title="YouTube video player" frameborder="0"
-            allow="autoplay"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe id="live2" class="live2" width="540" height="220" title="YouTube video player" frameborder="0"
-            allow="autoplay"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    </div>
-    <script type="module" src="video.js"></script>
-    <div class="range1">
-        <nav class="navbar">
-            <a id="focal_head" href="#focal">focal length</a>
-            <a id="session" type="button" onclick='leave()'>Leave Session</a>
-            <a id="demo"></a>
-        </nav>
-        <div class="slidervalue1">
-            <span id="us">0</span>
-            <label>cm</label>
-        </div>
+    <!-- <div class="header">
+        Focal Length Experiment
+    </div><br/>
+    <div class="expand-card">
+        <details>
+            <summary>Aim:</summary>
+            <p>To calculate focal length of a biconvex lens by observing image formation by the lens on an IoT enabled optical bench.</p>
+        </details>
+    </div><br/>
 
-        <div class="field1">
-            <div class="value left">7.6</div>
-            <input type="range" min="7.6" max="49.0" value="0.0" style="width: 160px;" step="0.1" id="u">
-            <div class="value right">49.0</div>
-            <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
-        </div>
-        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1">+</button>
-        <button type="button" onclick='decrement("u")' class="btn_minus" id="btn_minus1">-</button>
-    </div>
-    <br />
-    <div class="range1">
-        <div class="slidervalue1">
-            <span id="vs">0</span>
-            <label>cm</label>
-        </div>
+    <div class="expand-card">
+        <details>
+            <summary>Apparatus:</summary>
+            <ul><li>
+                Biconvex lens of focal length 10-15 cm.
+            </li>
+            <li>
+                An asymmetric light emitting object.
+            </li>
+            <li>
+                A white screen
+            </li>
+            <li>
+                Optical bench 
+            </li></ul>
+        </details>
+    </div><br/>
 
-        <div class="field1">
-            <div class="value left">6.5</div>
-            <input type="range" min="6.5" max="48.0" value="0.0" style="width: 160px;" step="0.1" id="v">
-            <div class="value right">48.0</div>
-            <div class="v_label" id="v_label" data-hover="Image"><span></span></div>
-        </div>
-        <button type="button" onclick='increment("v")' class="btn_plus" id="btn_plus2">+</button>
-        <button type="button" onclick='decrement("v")' class="btn_minus" id="btn_minus2">-</button>
-        <div class="focal_val" id="fof">Focal Length:<div id="f" value="0.0">0</div></div>
-        <div class="ctrls">
-            <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
-            <button type="button" class="save" onclick='save_vals()' id='IDK'>Save Values</button>
-            <button type="button" class="download" onclick='download_vals()' id='wtf'>Download Values</button>
-        </div>
-        
-        
-        <!-- <script>
-            function myfunction() {
-                console.log("tu pagal hai kya??")
-                document.getElementById("bt1").innerHTML = "Recalibrating";
-                document.querySelector("#us").innerHTML = "0";
-                document.querySelector("#vs").innerHTML = "0";
-                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-            }
-        </script> -->
+    <div class="expand-card">
+        <details>
+            <summary>Physics of the Experiment:</summary>
+            <p>The main physics behind the experiment can be summarized as:</p>
+            <p>To calculate the focal length of a lens you should be familiar with basic concepts of refraction of light from a lens and lens formula which will be used to calculate the focal length by obtaining object and image distances with proper sign convention.
+                The lens formula is given by:
+            </p>
+            <p>$$\frac{1}{f}=\frac{1}{v}-\frac{1}{u}$$</p>
+            <p>In the above formula, v = Image distance, u = Object Distance, f = Focal Length</p>
+        </details>
+    </div> -->
+    <nav class="navbar">
+        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
+        <button id="Leave_Queue">Back to Home</button>
+    </nav>
 
+    <div class="card" id="fl">
+        <div class="card__inner" id="fl_in">
+            <div class="card__face card__face--back">
+                <div class="card__content">
+                    <div class="card__header">
+                        <h2>Vanishing Rod</h2>
+                    </div>
+                    <div class="card__body">
+                        <h3>Aim</h3>
+                        <p>To calculate focal length of a biconvex lens by observing image formation by the lens on an
+                            IoT enabled optical bench.</p><br />
+                        <h3>Apparatus</h3>
+                        <p>
+                        <ul>
+                            <li>
+                                Biconvex lens of focal length 10-15 cm.
+                            </li>
+                            <li>
+                                An asymmetric light emitting object.
+                            </li>
+                            <li>
+                                A white screen
+                            </li>
+                            <li>
+                                Optical bench
+                            </li>
+                        </ul>
+                        </p><br />
+                        <h3>Physics of the Experiment</h3>
+                        <p>The main physics behind the experiment can be summarized as:</p>
+                        <p>To calculate the focal length of a lens you should be familiar with basic concepts of
+                            refraction of light from a lens and lens formula which will be used to calculate the focal
+                            length by obtaining object and image distances with proper sign convention.
+                            The lens formula is given by:
+                        </p>
+                        <p>$$\frac{1}{f}=\frac{1}{v}-\frac{1}{u}$$</p>
+                        <p>In the above formula, v = Image distance, u = Object Distance, f = Focal Length</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
 </body>
 
 </html>
