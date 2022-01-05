@@ -53,7 +53,7 @@ function vanish_exp(){
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  if(typeof sessionStorage.getItem('uid')  === 'undefined'){
+  if(typeof sessionStorage.getItem('uid')  === 'object'){
     location.href = '../sign_in/sign_in.html'
   }
 })
