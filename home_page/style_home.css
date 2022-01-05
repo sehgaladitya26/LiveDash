@@ -260,34 +260,30 @@ body {
 
 .navbar{
   overflow: hidden;
-  background-size: 200%;
   background-position: right;
-  transition: background-position 1s;
   cursor: pointer;
 
+  
   position: fixed;
   display: block;
   top: 0px;
-  width: 100%;
+  width: 100vw;
   height: 70px;
   z-index: 3;
 }
-.navbar:hover{
-  background-size: 100%;
-  background-position: left;
-}
 
 .navbar a{
-  display: block;
+  display: flex;
   position: relative;
   color: #fff;
-  font-size: 320%;
   padding: 5px 16px;
   text-decoration: none;
 }
 
 #User{
   font-family: "Poppins",sans-serif;
+  display: flex;
+  overflow: hidden;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
   color: #fff;
@@ -308,11 +304,15 @@ body {
 #focal_head{
   line-height: 1.3;
   font-family: "Bebas Neue",cursive;
+  font-size: 320%;
   font-weight: 600;
   letter-spacing: 1px;
   float: left;
 }
 .navbar button{
+  position: fixed;
+  overflow: auto;
+  display: f;
   font-family: "Poppins",sans-serif;
   background-image: var(--gradient);
   border: 1px solid rgb(255, 255, 255);
@@ -321,9 +321,9 @@ body {
   font-size: 120%;
   line-height: 2;
   padding: 0px 10px 0 10px;
-  position: relative;
+
   top: 15px;
-  right: -100px;
+  right: 4vw;
   float: right;
   background-size: 200%;
   background-position: right;
@@ -338,3 +338,11 @@ body {
 #sign_in{
   right: 20px;
 }
+
+/* .head.is_vanished{
+  display: none;
+}
+
+.head.is_not_vanished{
+  display: block;
+} */
