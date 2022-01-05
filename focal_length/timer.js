@@ -33,7 +33,9 @@ var x = setInterval(() => {
     // If the count down is over, write some text 
     if (distance <= 0) {
         clearInterval(x);
-        sessionStorage.removeItem('saved_countdown');
+        sessionStorage.removeItem("saved_countdown");
+        sessionStorage.removeItem("saved_val_v");
+        sessionStorage.removeItem("saved_val_u");
         document.getElementById("demo").innerHTML = "Session Ended";
         setTimeout(function(){
             sessionStorage.clear();
