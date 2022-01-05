@@ -15,7 +15,7 @@
 }
 
 html,body{
-  display: contents;
+  display: block;
   /* height:110%;
   width: 150%; */
   text-align: center;
@@ -31,7 +31,7 @@ html,body{
   top: 0px;
   right: 0px;
   width: 100%;
-  height: 8%;
+  height: 70px;
   z-index: 3;
 }
 
@@ -77,8 +77,8 @@ html,body{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top: 600px;
-  right: 80px;
+  top: 15vh;
+  right: 100px;
   height: 80px;
   width: 380px;
   background: #fff;
@@ -193,11 +193,11 @@ html,body{
 }
 
 .range1 .field1 .value.left{
-  left: 55px;
+  left: 26px;
 }
 
 .range1 .field1 .value.right{
-  right: 38px;
+  right: 15px;
 }
 
 .range1 .field1 .btn{
@@ -251,19 +251,19 @@ html,body{
 #u_label:hover::after{
   content: "v";
 }
-.range1 .stream{
+.stream{
   position: relative;
-  top: -260px;
-  right: -120px;
+  top: 0vh;
+  right: 0px;
 }
 
-.range1 .stream .live1{
+.stream .live1{
   position: relative;
   outline: none;
-  top: -776px;
-  right: 650px;
-  height: 420px;
-  width: 760px;
+  top: 80px;
+  right: 0px;
+  height: 360px;
+  width: 640px;
   border: 10px;
   padding: 16px 30px;
   border-radius: 20px;
@@ -273,13 +273,13 @@ html,body{
   z-index: 2;
 }
 
-.range1 .stream .live2{
+.stream .live2{
   position: relative;
   outline: none;
-  top: -1200px;
-  right: -120px;
-  height: 420px;
-  width: 750px;
+  right: 0px;
+  top: 80px;
+  height: 360px;
+  width: 640px;
   border: 10px;
   padding: 16px 30px;
   border-radius: 20px;
@@ -302,7 +302,7 @@ video{
   overflow: hidden;
   height: 180px;
   width: 180px;
-  top: -300px;
+  top: -240px;
   right: -520px;
   background: #fff;
   /* font-family: "Poppins",sans-serif; */
@@ -312,6 +312,11 @@ video{
   color: #664AFF;
   border-radius: 20px;
 }
+
+.range1 .ctrls {
+  position: relative;
+  top: -180px;
+}
 #f{
   color: #664AFF;
   font-size: 55px;
@@ -320,7 +325,7 @@ video{
 #IDK {
   position: relative;
   outline: none;
-  top: -280px;
+  top: -100px;
   right: 220px;
   height: 60px;
   width: 250px;
@@ -346,7 +351,7 @@ video{
 #wtf {
   position: relative;
   outline: none;
-  top: -340px;
+  top: -160px;
   right: -45px;
   height: 60px;
   width: 300px;
