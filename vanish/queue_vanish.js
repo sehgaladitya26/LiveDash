@@ -118,7 +118,7 @@ function myTimer() {
         .then(response => response.json())
         .then(data => {
             const myJSON = JSON.stringify(data)
-            console.log(document.getElementById('que_pos').innerHTML == 1)
+            //console.log(document.getElementById('que_pos').innerHTML == 1)
             if (myJSON == "0" && Number(document.getElementById('que_pos').innerHTML == 1)) {
                 deleteDoc(doc(db, "Queue_Vanish", uid))
                     .then(() => {
@@ -148,9 +148,9 @@ Leave_Queue.addEventListener('click', (e) => {
 })
 
 window.addEventListener('beforeunload',  (e) => {
-    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+    //fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
     fetch('https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3=0')
-
+    alert("You are going to leave the page");
     e.preventDefault();
 
     deleteDoc(doc(db, "Queue_Vanish", uid))
