@@ -134,6 +134,19 @@ if(typeof sessionStorage.getItem('uid')  === 'object'){
     location.href = '../sign_in/sign_in.html'
   }
 
+const Leave_Queue = document.querySelector('#Leave_Queue');
+Leave_Queue.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    deleteDoc(doc(db, "Queue_Vanish", uid))
+        .then(() => {
+            location.replace("../home_page/home.html");
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+})
+
 
 
 
