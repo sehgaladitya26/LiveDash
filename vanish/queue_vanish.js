@@ -130,7 +130,7 @@ function myTimer() {
         })
 }
 
-if(typeof uid === 'undefined'){
+if(typeof sessionStorage.getItem('uid')  === 'undefined'){
     location.href = '../sign_in/sign_in.html'
   }
 
