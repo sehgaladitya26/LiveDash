@@ -119,7 +119,7 @@ function myTimer() {
         .then(data => {
             const myJSON = JSON.stringify(data)
             //console.log(document.getElementById('que_pos').innerHTML == 1)
-            if (myJSON == "0" && Number(document.getElementById('que_pos').innerHTML == 1)) {
+            if (myJSON == "0" && Number(document.getElementById('que_pos').innerHTML) == 0) {
                 deleteDoc(doc(db, "Queue_Vanish", uid))
                     .then(() => {
                         location.href = 'vanish.html';
