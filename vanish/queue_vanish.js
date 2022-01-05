@@ -111,8 +111,8 @@ onSnapshot(collRef, (Snap) => {
         })
 })
 
-var Free_or_not = setInterval(myTimer, 2000);
-function myTimer() {
+var Free_or_not = setInterval(myTimer1, 2000);
+function myTimer1() {
     //document.querySelector('form').onsubmit = function () {
     fetch('https://blynk.cloud/external/api/get?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3')
         .then(response => response.json())
