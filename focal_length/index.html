@@ -10,13 +10,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
     </style>
     <!-- <script>
-        //check for Navigation Timing API support
+        // check for Navigation Timing API support
         if (window.performance) {
-            console.info("window.performance works fine on this browser");
+             console.info("window.performance works fine on this browser");
         }
         console.info(performance.navigation.type);
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
             console.info("This page is reloaded");
+
+
         } else {
             console.info("This page is not reloaded");
         }
@@ -29,12 +31,15 @@
                 window.history.pushState('forward', null, './#forward');
 
                 $(window).on('popstate', function () {
-                    //alert('Are you sure you want to exit?' + '\n' +  'WARNING: You will loose all your progress' + '\n' + '\n' + 'Click Back again to exit');
+                    console.log("FUCK YOU OFF");
+                    console.log("FUCK YOU OF");
                     sessionStorage.removeItem("saved_countdown");
                     sessionStorage.removeItem("saved_val_v");
                     sessionStorage.removeItem("saved_val_u");
-                    location.replace("../home_page/home.html");
-                    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+                    location.href='../home_page/home.html'
+                    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=1")
+                    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v6=0")
+
                 });
 
             }

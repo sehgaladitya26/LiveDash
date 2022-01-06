@@ -37,9 +37,15 @@ var x = setInterval(() => {
         sessionStorage.removeItem("saved_val_v");
         sessionStorage.removeItem("saved_val_u");
         document.getElementById("demo").innerHTML = "Session Ended";
-        setTimeout(function(){
-            location.replace("../home_page/home.html");
-            fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
-        }, 2000);
+        setTimeout(2000);
+        location.replace("../home_page/home.html");
+        fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=1")
+        fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v6=0")
+
+
+        // setTimeout(function(){
+        //     location.replace("../home_page/home.html");
+        //     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+        // }, 2000);
     }
 }, 1000);
