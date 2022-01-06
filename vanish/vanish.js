@@ -125,3 +125,8 @@ function leave(){
 function return_home(){
     location.href='../home_page/home.html'
 }
+
+window.addEventListener('beforeunload', () => {
+    fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
+    fetch('https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3=0')
+})
