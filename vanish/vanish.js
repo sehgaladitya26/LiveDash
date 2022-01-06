@@ -121,3 +121,7 @@ function leave(){
             location.replace("../home_page/home.html")
         })
 }
+
+function return_home(){
+    location.href='../home_page/home.html'
+}

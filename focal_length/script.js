@@ -206,3 +206,7 @@ function JSON2CSV() {
     })
     return csvStr;
 }
+
+function return_home(){
+    location.href='../home_page/home.html'
+}
