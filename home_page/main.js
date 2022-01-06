@@ -33,13 +33,13 @@ function pendulum_exp(){
 }
 
 function focal_exp(){
-  // fetch('https://blynk.cloud/external/api/isHardwareConnected?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV')
-  // .then(response => response.json())
-  // .then(data => {
-  //   const connection = JSON.stringify(data)
-  //   // console.log(connection);
+  fetch('https://blynk.cloud/external/api/isHardwareConnected?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV')
+  .then(response => response.json())
+  .then(data => {
+    const connection = JSON.stringify(data)
+    // console.log(connection);
 
-  //   if(connection == "true"){
+    if(connection == "true"){
       fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v6')
       .then(response => response.json())
       .then(data => {
@@ -53,18 +53,18 @@ function focal_exp(){
           location.href='../focal_length/queue.html'
         }
       })
-    // }else{
-    //   alert('Device is currently offline, please try again later');
-    // }
-  // })
+    }else{
+      alert('Device is currently offline, please try again later');
+    }
+  })
 }
 
 function vanish_exp(){
-  // fetch('https://blynk.cloud/external/api/isHardwareConnected?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji')
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     const connection = JSON.stringify(data)
-  //     if(connection == "true"){
+  fetch('https://blynk.cloud/external/api/isHardwareConnected?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji')
+    .then(response => response.json())
+    .then(data => {
+      const connection = JSON.stringify(data)
+      if(connection == "true"){
         fetch('https://blynk.cloud/external/api/get?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3')
         .then(response => response.json())
         .then(data => {
@@ -78,10 +78,10 @@ function vanish_exp(){
             location.href='../vanish/queue.html'
           }
         })
-      // }else{
-      //   alert('Device is currently offline, please try again later');
-      // }
-    // })
+      }else{
+        alert('Device is currently offline, please try again later');
+      }
+    })
   }
 
 window.addEventListener('DOMContentLoaded', () => {
