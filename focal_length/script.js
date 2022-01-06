@@ -167,9 +167,9 @@ function leave(){
     location.replace("../home_page/home.html")
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v6=0")
-        .then(() => {
-            location.replace("../home_page/home.html")
-        })
+        // .then(() => {
+        //     location.replace("../home_page/home.html")
+        // })
 }
 
 window.addEventListener('beforeunload',  () => {
