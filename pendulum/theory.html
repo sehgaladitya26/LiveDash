@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pendulum | Theory </title>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+    </style>
+    <script>
+        //check for Navigation Timing API support
+        if (window.performance) {
+            console.info("window.performance works fine on this browser");
+        }
+        console.info(performance.navigation.type);
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            console.info("This page is reloaded");
+        } else {
+            console.info("This page is not reloaded");
+        }
+    </script>
+    <link rel="stylesheet" href="theory.css">
+</head>
+
+<body>
+    <!-- <div class="header">
+        Focal Length Experiment
+    </div><br/>
+    <div class="expand-card">
+        <details>
+            <summary>Aim:</summary>
+            <p>To calculate focal length of a biconvex lens by observing image formation by the lens on an IoT enabled optical bench.</p>
+        </details>
+    </div><br/>
+
+    <div class="expand-card">
+        <details>
+            <summary>Apparatus:</summary>
+            <ul><li>
+                Biconvex lens of focal length 10-15 cm.
+            </li>
+            <li>
+                An asymmetric light emitting object.
+            </li>
+            <li>
+                A white screen
+            </li>
+            <li>
+                Optical bench 
+            </li></ul>
+        </details>
+    </div><br/>
+
+    <div class="expand-card">
+        <details>
+            <summary>Physics of the Experiment:</summary>
+            <p>The main physics behind the experiment can be summarized as:</p>
+            <p>To calculate the focal length of a lens you should be familiar with basic concepts of refraction of light from a lens and lens formula which will be used to calculate the focal length by obtaining object and image distances with proper sign convention.
+                The lens formula is given by:
+            </p>
+            <p>$$\frac{1}{f}=\frac{1}{v}-\frac{1}{u}$$</p>
+            <p>In the above formula, v = Image distance, u = Object Distance, f = Focal Length</p>
+        </details>
+    </div> -->
+    <nav class="navbar">
+        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
+        <button id="Leave_Queue">Back to Home</button>
+    </nav>
+
+    <div class="card" id="fl">
+        <div class="card__inner" id="fl_in">
+            <div class="card__face card__face--back">
+                <div class="card__content">
+                    <div class="card__header">
+                        <h2>Vanishing Rod</h2>
+                    </div>
+                    <div class="card__body">
+                        <h3>Aim</h3>
+                        <p>the aim of the experiment is to measure the value of acceleration due to gravity, g, by using a simple pendulum setup at various lengths.</p><br />
+                        <h3>Apparatus</h3>
+                        <p>
+                        <ul>
+                            <li>
+                                Bob
+                            </li>
+                            <li>
+                                String
+                            </li>
+                            <li>
+                                Pendulum stand
+                            </li>
+                            <li>
+                                Stopwatch
+                            </li>
+                        </ul>
+                        </p><br />
+                        <h3>Physics of the Experiment</h3>
+                        <p>The main physics behind the experiment can be summarized as:</p>
+                        <p>the value of g is given by the formula $$g = \frac{(4\pi^2l)}{t^2}$$. one thing we observe is that the value of g is independant of the mass of the bob which can be shown by the derivation of the time period formula.
+                        </p>
+                        <p>Derivation</p>
+                        <p>Using the equation of motion, $$T-mgcosθ = mv^2l$$
+
+                            The torque tending to bring the mass to its equilibrium position,
+                            
+                            $$τ = mgLxsinθ = mgsinθxL = Ixα$$
+                            
+                            For small angles of oscillations sin θ ≈ θ,
+                            
+                            Therefore, $$Iα = -mgLθ$$
+                            
+                            $$α = -(mgLθ)/I -\omega^2 = -(mgLθ)/I$$
+                            
+                            $$\omega^2 = (mgL)/I$$
+                            
+                            $$\omega^2 = √(mgL/I)$$
+                            
+                            Using $$I = ML^2$$, [where I denote the moment of inertia of bob]
+                            
+                            we get, $$\omega^2 = √(g/L)$$
+                            
+                            Therefore, the time period of a simple pendulum is given by,
+                            
+                            $$T = 2π/ω0 = 2\pi x √(L/g)$$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
