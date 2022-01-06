@@ -42,7 +42,7 @@ function vanish_exp(){
     .then(data => {
       const myJSON = JSON.stringify(data)
       if (myJSON == "0") {
-        console.log("FUCK YOU");
+        // console.log("FUCK YOU");
         location.href='../vanish/vanish.html'
         fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3=1")
       }
@@ -61,10 +61,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener("orientationchange", ()=> {
   if(window.orientation == 90){
-    console.log("landscape");
+    // console.log("landscape");
     document.querySelector('.head').style.display = 'block'
   }else{
-    console.log("portrait");
+    // console.log("portrait");
     document.querySelector('.head').style.display = 'none'
   }
 })

@@ -4,7 +4,7 @@ var value2;
 var data = [];
 
 function myfunction() {
-    console.log("tu pagal hai kya??")
+    // console.log("tu pagal hai kya??")
     document.getElementById("bt1").innerHTML = "Recalibrating";
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
     myInterval = setInterval(myTimer, 500);
@@ -42,16 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     saved_u_val = sessionStorage.getItem('saved_val_u');
     saved_v_val = sessionStorage.getItem('saved_val_v');
-    console.log(saved_u_val);
-    console.log(saved_v_val);
+    // console.log(saved_u_val);
+    // console.log(saved_v_val);
 
     if(saved_u_val == null && saved_v_val == null){
         saved_u_val = 7.6;
         saved_v_val = 6.5;
         sessionStorage.setItem('saved_val_u', saved_u_val);
         sessionStorage.setItem('saved_val_v', saved_v_val);
-        console.log(saved_u_val);
-        console.log(saved_v_val);
+        // console.log(saved_u_val);
+        // console.log(saved_v_val);
         localStorage.setItem('experiment_Data', JSON.stringify(data));        
     }
     value1 = saved_u_val;
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector("#us").innerHTML = value1;
         fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v1=" + value1)
         sessionStorage.setItem('saved_val_u', value1);
-        console.log(value1 + "and" + value2);
+        // console.log(value1 + "and" + value2);
         document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
         return false;
     }
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector("#vs").innerHTML = value2;
         fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v2=" + value2)
         sessionStorage.setItem('saved_val_v', value2);
-        console.log(value2 + "and" + value1);
+        // console.log(value2 + "and" + value1);
         document.querySelector("#f").innerHTML = ((parseFloat(value1)*parseFloat(value2))/(parseFloat(value1) + parseFloat(value2))).toFixed(2);
         return false;
     }
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function increment(ID) {
-    console.log("Haan main pagal hai for " + ID);
+    // console.log("Haan main pagal hai for " + ID);
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) + Number(cur.step)).toFixed(1);
@@ -129,7 +129,7 @@ function increment(ID) {
 }
 
 function decrement(ID) {
-    console.log("Haan main pagal hai for " + ID);
+    // console.log("Haan main pagal hai for " + ID);
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) - Number(cur.step)).toFixed(1);
@@ -162,8 +162,8 @@ function leave(){
     sessionStorage.removeItem("saved_countdown");
     sessionStorage.removeItem("saved_val_v");
     sessionStorage.removeItem("saved_val_u");
-    console.log("DONE");
-    console.log("YES");
+    // console.log("DONE");
+    // console.log("YES");
     location.replace("../home_page/home.html")
     fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
 }

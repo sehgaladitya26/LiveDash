@@ -1,6 +1,6 @@
 var myInterval;
 function myfunction() {
-    console.log("tu pagal hai kya??")
+    // console.log("tu pagal hai kya??")
     document.getElementById("bt1").innerHTML = "Recalibrating";
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
     myInterval = setInterval(myTimer, 500);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     saved_u_val = sessionStorage.getItem('saved_val_u');
     // saved_v_val = sessionStorage.getItem('saved_val_v');
-    console.log(saved_u_val);
+    // console.log(saved_u_val);
     // console.log(saved_v_val);
 
     if(saved_u_val == null){
@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // saved_v_val = 0;
         sessionStorage.setItem('saved_val_u', saved_u_val);
         // sessionStorage.setItem('saved_val_v', saved_v_val);
-        console.log(saved_u_val);
+        // console.log(saved_u_val);
         // console.log(saved_v_val);
     }
-    console.log('Yes, I am mad');
+    // console.log('Yes, I am mad');
     // document.querySelector("#vs").innerHTML = saved_v_val;
     document.querySelector("#us").innerHTML = saved_u_val;
     document.querySelector("#u").value = saved_u_val;
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector("#us").innerHTML = value1;
         fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + value1)
         sessionStorage.setItem('saved_val_u', value1);
-        console.log(value1);
+        // console.log(value1);
 
     return false;
     }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function increment(ID) {
-    console.log("Haan main pagal hai for " + ID);
+    // console.log("Haan main pagal hai for " + ID);
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) + Number(cur.step));
@@ -89,13 +89,13 @@ function increment(ID) {
     }
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
-    console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+    // console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
     sessionStorage.setItem('saved_val_u', v1);
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + v1)
 }
 
 function decrement(ID) {
-    console.log("Haan main pagal hai for " + ID);
+    // console.log("Haan main pagal hai for " + ID);
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) - Number(cur.step));
@@ -104,7 +104,7 @@ function decrement(ID) {
     }
     cur.value = v1;
     document.getElementById(ID + "s").innerHTML = v1;
-    console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
+    // console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
     sessionStorage.setItem('saved_val_u', v1);
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v2=" + v1)
 }
@@ -113,8 +113,8 @@ function leave(){
     sessionStorage.removeItem("saved_countdown");
     sessionStorage.removeItem("saved_val_v");
     sessionStorage.removeItem("saved_val_u");
-    console.log("DONE");
-    console.log("YES");
+    // console.log("DONE");
+    // console.log("YES");
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v0=" + "1")
     fetch("https://blynk.cloud/external/api/update?token=R77dMWPsQ8B7xavEV_HVjaVF01DklJji&v3=0")
         .then(() => {

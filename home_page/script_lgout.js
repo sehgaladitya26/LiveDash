@@ -95,7 +95,7 @@ logout.addEventListener('click', (e) => {
 
     signOut(auth)
         .then(() => {
-            console.log('user signed out');
+            // console.log('user signed out');
             location.replace ("../index.html");
         })
         .catch((err) => {
