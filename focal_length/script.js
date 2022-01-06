@@ -199,6 +199,7 @@ function save_vals(){
     };
     data.push(exp_data);
     localStorage.setItem('experiment_Data', JSON.stringify(data));
+    alert("Value Saved\n Cheers !!!");
 };
 
 function download_vals() {
