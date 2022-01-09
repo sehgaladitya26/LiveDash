@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard | Focal Length </title>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+    </style>
+    <!-- <script>
+        // check for Navigation Timing API support
+        if (window.performance) {
+             console.info("window.performance works fine on this browser");
+        }
+        console.info(performance.navigation.type);
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            console.info("This page is reloaded");
+
+
+        } else {
+            console.info("This page is not reloaded");
+        }
+    </script> -->
+    <script>
+        jQuery(document).ready(function ($) {
+
+            if (window.history && window.history.pushState) {
+
+                window.history.pushState('forward', null, './#forward');
+
+                $(window).on('popstate', function () {
+                    console.log("FUCK YOU OFF");
+                    console.log("FUCK YOU OF");
+                    sessionStorage.removeItem("saved_countdown");
+                    sessionStorage.removeItem("saved_val_v");
+                    sessionStorage.removeItem("saved_val_u");
+                    location.href='../home_page/home.html'
+                    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=1")
+                    fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v6=0")
+
+                });
+
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="come.css">
+</head>
+
+<body>
+    <div class="stream">
+        <iframe id="live1" class="live1" width="540" height="220" title="YouTube video player" frameborder="0"
+            allow="autoplay"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <iframe id="live2" class="live2" width="540" height="220" src="https://www.youtube.com/embed/tWyxRxajvlo?autoplay=1" title="YouTube video player" frameborder="0"
+            allow="autoplay"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    <script type="module" src="video.js"></script>
+    <div class="range1">
+        <nav class="navbar">
+            <a id="focal_head" href="#focal">focal length</a>
+            <a id="session" type="button" onclick='leave()'>Leave Session</a>
+            <a id="demo"></a>
+        </nav>
+        <div class="slidervalue1">
+            <span id="us">0</span>
+            <label>cm</label>
+        </div>
+
+        <div class="field1">
+            <div class="value left">7.6</div>
+            <input type="range" min="7.6" max="49.0" value="0.0" style="width: 160px;" step="0.1" id="u">
+            <div class="value right">49.0</div>
+            <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
+        </div>
+        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1">+</button>
+        <button type="button" onclick='decrement("u")' class="btn_minus" id="btn_minus1">-</button>
+    </div>
+    <br />
+    <div class="range1">
+        <div class="slidervalue1">
+            <span id="vs">0</span>
+            <label>cm</label>
+        </div>
+
+        <div class="field1">
+            <div class="value left">6.5</div>
+            <input type="range" min="6.5" max="48.0" value="0.0" style="width: 160px;" step="0.1" id="v">
+            <div class="value right">48.0</div>
+            <div class="v_label" id="v_label" data-hover="Image"><span></span></div>
+        </div>
+        <button type="button" onclick='increment("v")' class="btn_plus" id="btn_plus2">+</button>
+        <button type="button" onclick='decrement("v")' class="btn_minus" id="btn_minus2">-</button>
+        <div class="focal_val" id="fof">Focal Length:<div id="f" value="0.0">0</div></div>
+        <div class="ctrls">
+            <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
+            <button type="button" class="save" onclick='save_vals()' id='IDK'>Save Values</button>
+            <button type="button" class="download" onclick='download_vals()' id='wtf'>Download Values</button>
+        </div>
+        
+        
+        <!-- <script>
+            function myfunction() {
+                console.log("tu pagal hai kya??")
+                document.getElementById("bt1").innerHTML = "Recalibrating";
+                document.querySelector("#us").innerHTML = "0";
+                document.querySelector("#vs").innerHTML = "0";
+                fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
+            }
+        </script> -->
+
+    </div>
+    
+</body>
+
+</html>
