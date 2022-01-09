@@ -297,7 +297,7 @@ body {
   background-position: right;
   cursor: pointer;
 
-  
+  background-image: linear-gradient(180deg, rgb(31, 28, 56), rgba(255, 255, 255, 0));
   position: fixed;
   display: block;
   top: 0px;
@@ -346,7 +346,6 @@ body {
 .navbar button{
   position: fixed;
   overflow: auto;
-  display: f;
   font-family: "Poppins",sans-serif;
   background-image: var(--gradient);
   border: 1px solid rgb(255, 255, 255);
@@ -363,6 +362,11 @@ body {
   background-position: right;
   transition: background-position 1s;
   cursor: pointer;
+}
+
+.navbar img {
+  position: relative;
+  top: 5.5px;
 }
 
 .navbar button:hover{
