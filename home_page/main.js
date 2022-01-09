@@ -32,6 +32,14 @@ function pendulum_exp(){
   location.href='../pendulum/pendulum.html';
 }
 
+function come_theory(){
+  location.href='../come/theory.html';
+}
+
+function come_exp(){
+  location.href='../come/come.html';
+}
+
 function focal_exp(){
   fetch('https://blynk.cloud/external/api/isHardwareConnected?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV')
   .then(response => response.json())
