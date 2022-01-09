@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap');
 	</style>
 	<title>Home | RTL</title>
 	<link rel="stylesheet" href="style_home.css" />
@@ -16,19 +17,14 @@
 <body>
 	<nav class="navbar">
 		<a id="focal_head" href="#focal">Remote Triggered Lab</a>
-		<p id="User"></p>
+		<!-- <p id="User"></p> -->
 		<button id="logout">Log-Out</button>
 	</nav>
+	<div id="welcome">Welcome,<div id="User"></div></div>
 
+	<div class="boxes">
 	<div class="card" id="fl">
 		<div class="card__inner" id="fl_in">
-			<!-- <div class="card__face card__face--front">
-				<img src="img2.jpg" alt="" class="p1" />
-				<h2 class="expe1"><br />Focal Length</h2>
-				<div class="in_queue">In-queue:<span value="7"> 7</span>
-					<img src="arrow.png" class="arrow" alt="" />
-				</div>
-			</div> -->
 			<div class="card__face card__face--back">
 				<div class="card__content">
 					<div class="card__header">
@@ -37,7 +33,10 @@
 					</div>
 					<div class="card__body">
 						<h3>Overview</h3>
-						<p>To calculate <strong>focal length</strong> of a <strong>biconvex</strong> lens by observing image formation by the lens on an <strong>enabled optical bench</strong>.</p>
+						<p>To calculate <strong>focal length</strong> of a <strong>biconvex</strong> lens by
+							observing image formation by the lens on an <strong>enabled optical
+								bench</strong>.
+						</p>
 						<div class="targets">
 							<button id="theory" onclick="focal_theory()">Theory</button>
 							<button id="experiment" onclick="focal_exp()">Dashboard</button>
@@ -47,15 +46,10 @@
 			</div>
 		</div>
 	</div>
+
+
 	<div class="card" id="pend">
 		<div class="card__inner" id="pend_in">
-			<!-- <div class="card__face card__face--front">
-				<img src="img1.jpg" alt="" class="p1" />
-				<h2 class="expe1">Pendulum</h2>
-				<div class="in_queue">In-queue:<span value="7"> 7</span>
-					<img src="arrow.png" class="arrow" alt="" />
-				</div>
-			</div> -->
 			<div class="card__face card__face--back">
 				<div class="card__content">
 					<div class="card__header">
@@ -64,7 +58,9 @@
 					</div>
 					<div class="card__body">
 						<h3>Overview</h3>
-						<p>The aim of the experiment is to measure the value of acceleration due to gravity, by using a simple pendulum setup at various lengths.</p>
+						<p>The aim of the experiment is to measure the value of acceleration due to gravity,
+							by
+							using a simple pendulum setup at various lengths.</p>
 						<div class="targets">
 							<button id="theory" onclick="pendulum_theory()">Theory</button>
 							<button id="experiment" onclick="pendulum_exp()">Dashboard</button>
@@ -74,15 +70,10 @@
 			</div>
 		</div>
 	</div>
+
+
 	<div class="card" id="van">
 		<div class="card__inner" id="van_in">
-			<!-- <div class="card__face card__face--front">
-				<img src="img3.jpg" alt="" class="p1" />
-				<h2 class="expe1"><br />Vanishing Rod</h2>
-				<div class="in_queue">In-queue:<span value="7"> 7</span>
-					<img src="arrow.png" class="arrow" alt="" />
-				</div>
-			</div> -->
 			<div class="card__face card__face--back">
 				<div class="card__content">
 					<div class="card__header">
@@ -91,7 +82,9 @@
 					</div>
 					<div class="card__body">
 						<h3>Overview</h3>
-						<p>The aim of this experiment is to observe the change in visibility of a glass rod when immersed in oil and in water</p>
+						<p>The aim of this experiment is to observe the change in visibility of a glass rod
+							when
+							immersed in oil and in water</p>
 						<div class="targets">
 							<button id="theory" onclick="vanish_theory()">Theory</button>
 							<button id="experiment" onclick="vanish_exp()">Dashboard</button>
@@ -101,6 +94,31 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="card" id="come">
+		<div class="card__inner" id="come_in">
+			<div class="card__face card__face--back">
+				<div class="card__content">
+					<div class="card__header">
+						<img src="img3.jpg" alt="" class="pp" />
+						<h2>CONSERVATION OF ENERGY</h2>
+					</div>
+					<div class="card__body">
+						<h3>Overview</h3>
+						<p>The aim of this experiment is to observe the change in visibility of a glass rod
+							when
+							immersed in oil and in water</p>
+						<div class="targets">
+							<button id="theory" onclick="come_theory()">Theory</button>
+							<button id="experiment" onclick="come_exp()">Dashboard</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="note">Made with 🐹 by UG2K20</div>
 </body>
 
 </html>
