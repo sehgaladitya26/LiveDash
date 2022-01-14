@@ -42,14 +42,14 @@ function come_exp(){
     .then(data => {
       const connection = JSON.stringify(data)
       if (connection == "true") {
-        fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v3')
+        fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v10')
           .then(response => response.json())
           .then(data => {
             const myJSON = JSON.stringify(data)
             if (myJSON == "0") {
               // console.log("FUCK YOU");
               location.href = '../come/come.html'
-              fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v3=1")
+              fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v10=1")
             }
             else {
               location.href = '../come/queue.html'
