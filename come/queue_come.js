@@ -114,7 +114,7 @@ onSnapshot(collRef, (Snap) => {
 var Free_or_not = setInterval(myTimer1, 2000);
 function myTimer1() {
     //document.querySelector('form').onsubmit = function () {
-    fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v3')
+    fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v10')
         .then(response => response.json())
         .then(data => {
             const myJSON = JSON.stringify(data)
@@ -123,7 +123,7 @@ function myTimer1() {
                 deleteDoc(doc(db, "Queue_COME", uid))
                     .then(() => {
                         location.href = 'come.html';
-                        fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v3=1")
+                        fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v10=1")
                     });
                 clearInterval(Free_or_not);
             }
@@ -149,7 +149,7 @@ Leave_Queue.addEventListener('click', (e) => {
 
 window.addEventListener('beforeunload',  (e) => {
     // fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v0=" + "1")
-    // fetch('https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v3=0')
+    // fetch('https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v10=0')
     alert("You are going to leave the page");
     e.preventDefault();
 
