@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
+    <title>Home | RTL</title>
+    <link rel="stylesheet" href="queue.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800;900&family=Poppins:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400&display=swap');
+    </style>
+    <script type="module" src="queue_come.js"></script>
+    <!-- on button click, add feature of leaving the queue and going back to home page-->
+</head>
+
+<body>
+    <!-- <nav class="navbar">
+        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
+        <button id="Leave_Queue">Leave Queue</button>
+    </nav>
+    <h1>Welcome to the virtual waiting room</h1><br>
+    <h1>You will soon get the chance to operate the apparatus</h1><br>
+    <h1>Your token number is:</h1><br>
+    <div class="queue"><div class="value" id="que_pos"></div></div>
+    <h2>Sorry for the inconvenience if any</h2><br> -->
+
+    <nav class="navbar">
+        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
+<!--         <p id="User"></p> -->
+        <button id="Leave_Queue">Leave Queue</button>
+    </nav>
+
+    <div class="card" id="fl">
+        <div class="card__inner" id="fl_in">
+            <!-- <div class="card__face card__face--front">
+				<img src="img2.jpg" alt="" class="p1" />
+				<h2 class="expe1"><br />Focal Length</h2>
+				<div class="in_queue">In-queue:<span value="7"> 7</span>
+					<img src="arrow.png" class="arrow" alt="" />
+				</div>
+			</div> -->
+            <div class="card__face card__face--back">
+                <div class="card__content">
+                    <div class="card__header">
+                        <h2>Your Queue Number:</h2>
+                        <div class="queue"><div class="value" id="que_pos"></div></div>
+                    </div>
+                    <div class="card__body">
+                        <h3>Welcome to the Virtual Waiting Room.</h3><br/>
+                        <p>You will soon get the chance to operate the apparatus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

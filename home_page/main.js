@@ -32,6 +32,35 @@ function pendulum_exp(){
   location.href='../pendulum/pendulum.html';
 }
 
+function come_theory(){
+  location.href='../come/theory.html';
+}
+
+function come_exp(){
+  fetch('https://blynk.cloud/external/api/isHardwareConnected?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV')
+    .then(response => response.json())
+    .then(data => {
+      const connection = JSON.stringify(data)
+      if (connection == "true") {
+        fetch('https://blynk.cloud/external/api/get?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v10')
+          .then(response => response.json())
+          .then(data => {
+            const myJSON = JSON.stringify(data)
+            if (myJSON == "0") {
+              // console.log("FUCK YOU");
+              location.href = '../come/come.html'
+              fetch("https://blynk.cloud/external/api/update?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV&v10=1")
+            }
+            else {
+              location.href = '../come/queue.html'
+            }
+          })
+      } else {
+        alert('Device is currently offline, please try again later');
+      }
+    })
+}
+
 function focal_exp(){
   fetch('https://blynk.cloud/external/api/isHardwareConnected?token=LvC6vyL_uPSpPdgnlCln0I9Vab6zcogV')
   .then(response => response.json())
