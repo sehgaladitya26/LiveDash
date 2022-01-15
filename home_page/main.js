@@ -1,20 +1,20 @@
-const card1 = document.querySelector("#fl_in");
+// const card1 = document.querySelector("#fl_in");
 
-card1.addEventListener("click", function (e) {
-  card1.classList.toggle('is-flipped');
-});
+// card1.addEventListener("click", function (e) {
+//   card1.classList.toggle('is-flipped');
+// });
 
-const card2 = document.querySelector("#pend_in");
+// const card2 = document.querySelector("#pend_in");
 
-card2.addEventListener("click", function(e) {
-  card2.classList.toggle('is-flipped');
-});
+// card2.addEventListener("click", function(e) {
+//   card2.classList.toggle('is-flipped');
+// });
 
-const card3 = document.querySelector("#van_in");
+// const card3 = document.querySelector("#van_in");
 
-card3.addEventListener("click", function (e) {
-  card3.classList.toggle('is-flipped');
-});
+// card3.addEventListener("click", function (e) {
+//   card3.classList.toggle('is-flipped');
+// });
 
 function pendulum_theory(){
   location.href='../pendulum/theory.html';
